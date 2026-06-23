@@ -7,7 +7,7 @@
 3. Open the chat (`Ctrl/Cmd+L`) and say "hello" to confirm it responds.
 4. *(Optional)* helpful extensions: [`03_cursor/READ_extensions.md`](../03_cursor/READ_extensions.md).
 
-> 🔒 Cursor sends prompts to its cloud even when a model "runs locally." For truly-private work, that's what [`04_local/`](../04_local/README.md) is for.
+> 🔒 Cursor's native AI sends prompts to its cloud even when a model "runs locally." For truly-private work, you'll run the **Cline** extension inside Cursor pointed at Ollama — that's what [`04_local/`](../04_local/README.md) is for.
 
 ---
 

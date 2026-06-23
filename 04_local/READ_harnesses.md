@@ -4,19 +4,21 @@
 
 ## ⭐ The recommendation (least friction, best results)
 
-1. **Start with [Continue](ACTIVITY_continue_local.md)** — one-click extension in Cursor/VS Code, auto-detects Ollama, runs on a modest laptop. Chat, inline edits, autocomplete.
-2. **Step up to [Cline](ACTIVITY_cline_local.md)** for an autonomous agent. Needs a capable model (24B+, not a 7B) and a raised context window (one-line Modelfile fix, below).
+Use **[Cline](ACTIVITY_cline_local.md)** — the strongest local coding agent — installed inside an editor you already have:
+
+1. **Host it in Cursor** (you installed Cursor already → fewest tools). Or any VS Code–based editor: **VS Code**, **Positron** (great for R/Python data science), Windsurf, Zed.
+2. **Point it at Ollama** (gear → Ollama → `http://localhost:11434`), with a **capable model** (24B+, not a 7B) and a **raised context window** (one-line Modelfile fix, below).
 3. **Prefer the terminal?** **Aider** — mature, git-native, `pip install`.
 
 ## 🗺️ The field
 
 | Tool | Form | Notes |
 |------|------|-------|
-| **Continue** ⭐ | IDE ext | start here; forgiving of small models |
-| **Cline** ⭐ | IDE ext | strongest local agent (5M+ installs); needs strong model + `num_ctx` |
+| **Cline** ⭐ | IDE ext (Cursor / VS Code / Positron) | strongest local agent (63k★); needs strong model + `num_ctx` |
 | **Aider** | terminal | git-native; every change is a commit |
 | **OpenCode** | terminal | popularity leader (~165k★), provider-agnostic |
 | **Pi** | terminal | minimal & hackable, for tinkerers |
+| **Continue** | — | **discontinued** — acquired by Cursor in 2026 and shut down |
 | **Open Interpreter** | REPL | **faded** — the 2023 favorite, no longer the serious-coding choice |
 
 ## 🔑 The one setting that makes agents work

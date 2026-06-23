@@ -17,11 +17,11 @@
 
 ## 🔁 A realistic workflow
 
-Design in **Claude** → build in **Cursor** → review in **Claude** (a mini [red-team](../02_redteam/README.md)). If the data is sensitive, do all three with **Ollama + Continue** instead.
+Design in **Claude** → build in **Cursor** → review in **Claude** (a mini [red-team](../02_redteam/README.md)). If the data is sensitive, do all three with **Ollama + Cline** instead.
 
 ## 💡 The honest caveat
 
-Cursor's "local model" mode is **not truly private** — prompts are coordinated on Cursor's servers and Tab is locked to Cursor's own model. For real privacy use **Continue + Ollama** ([details](../04_local/README.md#-the-honest-truth-about-cursor-and-local-models)).
+Cursor's **native** AI is **not truly private** — prompts are coordinated on Cursor's servers and Tab is locked to Cursor's own model. For real privacy, run the **Cline** extension inside Cursor pointed at **Ollama** ([details](../04_local/README.md#-cursors-native-ai-vs-a-local-agent-inside-it)).
 
 ---
 

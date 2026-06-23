@@ -10,7 +10,7 @@
 
 | Card | You'll do | The point |
 |------|-----------|-----------|
-| [🔒 Private inline edit](ACTIVITY_private_edit.md) ⭐ | refactor code locally with Continue | a real coding agent, fully offline |
+| [🤖 Private coding agent](ACTIVITY_private_edit.md) ⭐ | refactor code with a local agent (Cline) | a real agent, fully offline |
 | [✈️ Prove it's offline](ACTIVITY_offline_proof.md) | turn off Wi-Fi and keep working | privacy you can see |
 
 ---
@@ -21,14 +21,14 @@
 - [READ: Quantization, Explained for Laptops](READ_quantization.md)
 - [READ: The Ollama Harness Landscape (2026)](READ_harnesses.md)
 - [READ: Security & Zero-Trust for AI Output](READ_security.md)
-- Setup references: [Install Ollama](../00_setup/ACTIVITY_ollama.md) · [Continue](ACTIVITY_continue_local.md) · [Cline (agent)](ACTIVITY_cline_local.md)
+- Setup references: [Install Ollama](../00_setup/ACTIVITY_ollama.md) · [Set up Cline (the local agent)](ACTIVITY_cline_local.md)
 - One-command setup: [`scripts/setup_local_ai.sh`](scripts/setup_local_ai.sh)
 
 ---
 
-## 🔎 The Honest Truth About Cursor and Local Models
+## 🔎 Cursor's Native AI vs. a Local Agent Inside It
 
-Cursor's "local model" mode is **not** truly private: Tab is locked to Cursor's own model, custom endpoints need a public HTTPS tunnel, and prompts are coordinated on Cursor's servers. For genuinely-nothing-leaves-the-laptop work, use **Continue** and **Cline** — they run inside the editor but talk straight to Ollama on `localhost`. Full explanation in [the harness landscape](READ_harnesses.md).
+Cursor's **built-in** AI is cloud-coordinated — prompts route through Cursor's servers and Tab is locked to Cursor's own model — so don't rely on Cursor's native features for privacy. The fix is to run **Cline** *as an extension inside* Cursor (or any VS Code–based editor — VS Code, **Positron**, Windsurf, Zed). Cline talks straight to Ollama on `localhost`, so nothing leaves your machine even though it lives in the same window. That's why this section centers on Cline → [set it up](ACTIVITY_cline_local.md).
 
 ---
 
