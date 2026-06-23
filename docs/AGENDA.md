@@ -18,7 +18,7 @@
 | 9:00 | Welcome + why "AI-X" | — |
 | 9:15 | Claude Desktop: Skills, routines, and HTML documents | [01](../01_claude_desktop/README.md) |
 | 10:15 | Red-teaming your research | [02](../02_redteam/README.md) |
-| 11:15 | Cursor vs. Claude: a comparative coding session | [03](../03_cursor/README.md) |
+| 11:15 | Cursor: a comparative coding session | [03](../03_cursor/README.md) |
 
 ## Afternoon
 
