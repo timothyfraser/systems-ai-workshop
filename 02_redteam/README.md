@@ -1,29 +1,25 @@
-# 🎯 README `/02_redteam`
+# 🎯 Red-Teaming Your Research — pick one (5 min)
 
-> Turn AI into your harshest, most useful reviewer. Feed a paper and its reviewer feedback into Claude and ask it to **attack** the work — find the logical gaps, the soft methods, the unclear claims — *before* a journal does.
+> Part of the **Claude** block. The facilitator demos adversarial review for ~5 minutes; then your group runs the card and we compare what the model caught.
 
----
-
-## Table of Contents
-
-- [Activities](#activities)
-- [The Skill](#the-skill)
+> **Objective:** turn Claude into your harshest, most useful reviewer — find logical gaps, soft methods, and unclear claims *before* a journal does.
 
 ---
 
-## Activities
+## 🎴 Activity menu
 
-1. [ACTIVITY: Red-Team Your Own Paper](ACTIVITY_red_team.md)
-    - [`prompts/red_team_review.md`](prompts/red_team_review.md) — a ready-to-use adversarial-review prompt
+| Card | You'll do | Uses skill |
+|------|-----------|-----------|
+| [🎯 Red Team a Report](ACTIVITY_red_team.md) | critique a real sample report (or your own paper) | `red-team-research` |
 
----
-
-## The Skill
-
-This repo ships a [`red-team-research`](../.claude/skills/red-team-research/SKILL.md) Skill that structures the critique: claims audit, methods scrutiny, alternative explanations, and a prioritized revision list. Open this folder in Claude Desktop or Claude Code and ask it to red-team your draft.
-
-> **Objective:** identify logical fallacies, methodological weaknesses, and unclear arguments — and get **actionable** suggestions, not vague praise.
+The full adversarial-review prompt also lives in [`prompts/red_team_review.md`](prompts/red_team_review.md) if you want the long form.
 
 ---
 
-← 🏠 [Back to Top](#table-of-contents)
+## 🧰 The Skill behind it
+
+[`red-team-research`](../.claude/skills/red-team-research/SKILL.md) structures the critique: strongest objection first, claims audit, methods scrutiny, and a prioritized list of the smallest fixes.
+
+---
+
+← 🏠 [Back to the workshop README](../README.md)

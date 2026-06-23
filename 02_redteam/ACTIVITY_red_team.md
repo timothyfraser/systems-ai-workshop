@@ -1,50 +1,28 @@
-# 📌 ACTIVITY
+# 🎴 ACTIVITY · Red Team a Report
 
-## Red-Team Your Own Paper
+> ⏱️ **5 minutes** · 🎯 **Make Claude your harshest reviewer — find the one objection that could sink a paper.**
 
-🕒 *Estimated Time: 25 minutes*
+**Do this:**
 
----
+1. Open the sample report (a short network-science report): **[timothyfraser.com/netsci/assignments/sample-report.pdf](https://timothyfraser.com/netsci/assignments/sample-report.pdf)** — *or* drop in one of your own papers.
+2. Attach it in Claude Desktop and paste the prompt:
 
-## ✅ Your Task
+```
+Use the red-team-research skill. Read the attached report and give me, in priority order:
+(1) the single strongest objection a hostile reviewer would raise, and exactly where it comes from;
+(2) two methodological weaknesses; and
+(3) the smallest fix for each.
+Be specific and cite the section. Where you're unsure, say so instead of inventing a criticism.
+```
 
-Run an **adversarial review** of one of your own papers (a draft, a revise-and-resubmit, or a rejected submission). The goal is to surface weaknesses while you can still fix them.
+✅ **Done when:** you have one **must-fix** objection you could act on this week — with a section reference.
 
-### 🧱 Stage 1: Gather the material
+💬 **Discuss:** did it surface something you'd have missed? Where was it *wrong*, and how did you know? (That judgment is the skill we're really practicing.)
 
-- [ ] A paper or substantial draft (PDF or text).
-- [ ] *(Optional but powerful)* any reviewer comments you've received — Claude can simulate that reviewer's stance and extend it.
+> 🔒 **Privacy:** for unpublished work you'd rather not send to the cloud, run the same prompt against a local model — see [`04_local/`](../04_local/README.md).
 
-### 🧱 Stage 2: Run the red-team prompt
-
-- [ ] Open Claude Desktop, attach the paper, and either invoke the [`red-team-research`](../.claude/skills/red-team-research/SKILL.md) Skill or paste the prompt from [`prompts/red_team_review.md`](prompts/red_team_review.md).
-- [ ] Ask for the critique in priority order: the objections most likely to sink the paper first.
-
-### 🧱 Stage 3: Push harder
-
-- [ ] Follow up: *"What's the single most damaging objection a hostile reviewer could raise?"*
-- [ ] Then: *"For each weakness, give the smallest change that would address it."*
-- [ ] If you have real reviewer comments: *"Here's Reviewer 2. Steelman their position, then tell me where they're right."*
-
-### 🧱 Stage 4: Triage
-
-- [ ] Sort the feedback into **must-fix**, **should-fix**, and **out-of-scope**.
-- [ ] Turn must-fix items into a concrete revision checklist.
+*Uses: [`red-team-research`](../.claude/skills/red-team-research/SKILL.md) · long-form prompt in [`prompts/red_team_review.md`](prompts/red_team_review.md)*
 
 ---
 
-## ⚠️ Use it well
-
-- **You decide what's valid.** The model proposes; you dispose. Some objections will be wrong — that's fine, you're looking for the *useful* ones.
-- **Privacy:** unpublished work is sensitive. If you'd rather not send a manuscript to the cloud, run this critique against a **local model** ([module 04](../04_local/README.md)) — a strong reasoner like `phi4` does a creditable job.
-- **Don't outsource judgment.** Red-teaming sharpens your argument; it doesn't replace your expertise.
-
----
-
-## 📤 Try It
-
-Red-team one real paper, produce a prioritized revision checklist, and identify the one objection you most need to preempt.
-
----
-
-← 🏠 [Back to the module README](README.md)
+← 🏠 [Back to the Red Team menu](README.md)

@@ -1,75 +1,36 @@
-# ⭐ README `/04_local`
+# 🦙 Ollama (Local AI) — pick one (5 min each)
 
-> Run capable AI **entirely on your own laptop** — no data center, no cloud, nothing leaving your machine. This is the answer to *"I love this, but I can't send my data anywhere."* You can, in fact, code with an AI agent on a plane with the Wi-Fi off.
+> Run capable AI **entirely on your own laptop** — no data center, no cloud, nothing leaving your machine. The answer to *"I love this, but I can't send my data anywhere."*
 
----
-
-## Table of Contents
-
-- [The Idea](#the-idea)
-- [Activities](#activities)
-- [Readings](#readings)
-- [The Stack at a Glance](#the-stack-at-a-glance)
-- [The Honest Truth About Cursor and Local Models](#-the-honest-truth-about-cursor-and-local-models)
+> **How this block runs (~25 min):** the facilitator spends ~5 minutes demoing Ollama (pull a model, run it, the privacy idea). Then your group picks **ONE** card below and runs it. *Assumes Ollama is installed from [`00_setup`](../00_setup/README.md) — installs are pre-work, not a 5-minute activity.*
 
 ---
 
-## The Idea
+## 🎴 Activity menu
 
-Three layers, each swappable:
-
-1. **Ollama** — the *backend*. Downloads and serves models on `localhost`. One install, then everything is a `pull`.
-2. **A local model** — *the brain*. Qwen3-Coder for serious coding, Gemma 4 for a fast laptop helper, Phi-4 for reasoning, Devstral if your machine is beefy. See [the model menu](READ_models.md).
-3. **A harness** — *the hands*. A coding agent that turns a model into something that reads your files, writes code, and refactors. Lowest friction first: **Continue** (one-click in Cursor/VS Code), then **Cline** when you want an autonomous agent — all pointed at Ollama, all local. See [the harness landscape](READ_harnesses.md) for the full menu and our friction-first recommendation.
-
-**Quantization** is what makes this fit on a laptop: compressed model weights (e.g. `Q4_K_M`) that keep most of the intelligence while shrinking memory use. See [the quantization guide](READ_quantization.md).
+| Card | You'll do | The point |
+|------|-----------|-----------|
+| [⚡ Two-model bake-off](ACTIVITY_run_compare.md) ⭐ | run the same prompt through two local models | feel the size/speed/quality trade |
+| [🔒 Private inline edit](ACTIVITY_private_edit.md) | refactor code locally with Continue | a real coding agent, fully offline |
+| [✈️ Prove it's offline](ACTIVITY_offline_proof.md) | turn off Wi-Fi and keep working | privacy you can see |
 
 ---
 
-## Activities
+## 📖 Readings & deep dives
 
-Complete these in order:
-
-1. [ACTIVITY: Install Ollama and Serve a Model](ACTIVITY_install_ollama.md)
-2. [ACTIVITY: Pull the Right Models for Your Laptop](ACTIVITY_pull_models.md)
-    - [`scripts/setup_local_ai.sh`](scripts/setup_local_ai.sh) — one command to install Ollama and pull a sensible model set
-3. [ACTIVITY: Continue — The Low-Friction Local Setup (Start Here)](ACTIVITY_continue_local.md)
-4. [ACTIVITY: Cline — The Best-in-Field Local Coding Agent](ACTIVITY_cline_local.md)
-
----
-
-## Readings
-
-- [READ: The Ollama Harness Landscape (2026)](READ_harnesses.md) — friction-first picks (Continue, Cline, Aider) and what faded
 - [READ: The Model Menu — Which Local Model Should I Run?](READ_models.md)
 - [READ: Quantization, Explained for Laptops](READ_quantization.md)
+- [READ: The Ollama Harness Landscape (2026)](READ_harnesses.md)
 - [READ: Security & Zero-Trust for AI Output](READ_security.md)
-
----
-
-## The Stack at a Glance
-
-```mermaid
-flowchart LR
-    subgraph laptop["🔒 Your laptop (nothing leaves)"]
-        A["Continue<br/>(in-editor, start here)"] --> O["Ollama<br/>localhost:11434"]
-        B["Cline<br/>(in-editor agent)"] --> O
-        O --> M["Local model<br/>Qwen3-Coder · Gemma 4 · Phi-4 · Devstral"]
-    end
-```
+- Setup references: [Install Ollama](ACTIVITY_install_ollama.md) · [Pull models](ACTIVITY_pull_models.md) · [Continue](ACTIVITY_continue_local.md) · [Cline (agent)](ACTIVITY_cline_local.md)
+- One-command setup: [`scripts/setup_local_ai.sh`](scripts/setup_local_ai.sh)
 
 ---
 
 ## 🔎 The Honest Truth About Cursor and Local Models
 
-The workshop blurb suggests "pointing Cursor to the Ollama local endpoint for a seamless, private coding experience." In practice, **that is not fully private**, and it's worth being precise:
-
-- **Cursor's Tab autocomplete is locked to Cursor's own model** — it cannot use a local model at all.
-- **Custom models in Cursor require a public HTTPS endpoint.** Plain `localhost:11434` is not reachable from Cursor's backend; people work around it with tunnels like `ngrok`, which means your traffic leaves your machine anyway.
-- **Cursor builds prompts and manages context on its own servers**, even when the model "runs locally." The compute may be local; the coordination is not.
-
-So if your goal is **genuinely nothing-leaves-the-laptop**, the right tools are **Continue** and **Cline** — both run *inside* Cursor/VS Code as extensions but talk directly to Ollama on `localhost`, bypassing Cursor's own cloud coordination. That's why this module leads with those. Use Cursor's built-in agent for its excellent *cloud* experience; use Continue/Cline when privacy is the requirement.
+Cursor's "local model" mode is **not** truly private: Tab is locked to Cursor's own model, custom endpoints need a public HTTPS tunnel, and prompts are coordinated on Cursor's servers. For genuinely-nothing-leaves-the-laptop work, use **Continue** and **Cline** — they run inside the editor but talk straight to Ollama on `localhost`. Full explanation in [the harness landscape](READ_harnesses.md).
 
 ---
 
-← 🏠 [Back to Top](#table-of-contents)
+← 🏠 [Back to the workshop README](../README.md)

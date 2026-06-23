@@ -46,7 +46,7 @@ Work through these in order, or jump to what you need:
 | # | Module | What you'll do |
 |---|--------|----------------|
 | 00 | [Setup](00_setup/README.md) | Install Git, Claude Desktop, Cursor, and Ollama |
-| 01 | [Claude Desktop: Skills & Routines](01_claude_desktop/README.md) | Build HTML posters/flyers, reusable routines, and meet Claude Code |
+| 01 | [Claude Desktop: Skills & Routines](01_claude_desktop/README.md) | Interactive tutorials, posters, red-teaming, one-command skill suites |
 | 02 | [Red-Teaming Your Research](02_redteam/README.md) | Run an adversarial review of your own paper |
 | 03 | [Cursor](03_cursor/README.md) | When to use an IDE agent vs. a conversational analyst |
 | 04 | [**Local AI (Ollama & BYOM)**](04_local/README.md) | Run Qwen, Gemma, Phi, and Devstral on your laptop — no data center |
