@@ -12,6 +12,7 @@
 | [🖼️ Poster](ACTIVITY_poster.md) | a printable one-page flyer | `html-poster` |
 | [🎯 Red Team a Report](../02_redteam/ACTIVITY_red_team.md) | a tough reviewer critique of a real report | `red-team-research` |
 | [🧰 Skill Suite](ACTIVITY_skill_suite.md) | one command that orients the agent to every skill | `/orient` |
+| [🧬 Sub-agents → Codebook](ACTIVITY_subagents.md) | fan out one agent per column to build a data dictionary | `column-documenter` |
 
 Each card hands you the **exact prompt** — no need to invent an idea on the spot.
 
@@ -25,6 +26,8 @@ Ship in [`.claude/skills/`](../.claude/skills/); they load when you open this re
 - [`html-poster`](../.claude/skills/html-poster/SKILL.md) — a clean, printable one-page flyer or poster
 - [`red-team-research`](../.claude/skills/red-team-research/SKILL.md) — adversarial review of a paper or report
 - [`claude-desktop-routines`](../.claude/skills/claude-desktop-routines/SKILL.md) — turn a recurring chore into a reusable routine
+
+Plus a sub-agent in [`.claude/agents/`](../.claude/agents/): [`column-documenter`](../.claude/agents/column-documenter.md) — documents one dataset column at a time, fanned out across all columns.
 
 ---
 

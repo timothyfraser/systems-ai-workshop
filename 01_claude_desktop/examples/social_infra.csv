@@ -1,0 +1,9 @@
+site_id,name,type,lat,lon,capacity,year_built,access_score,last_survey
+S001,Central Library,library,42.444,-76.501,400,1962,87,2025-03-01
+S002,Riverside Park,park,42.451,-76.488,0,1978,72,2025-02-14
+S003,Eastside Community Center,community_center,42.440,-76.470,150,,65,
+S004,Hilltop Clinic,clinic,42.462,-76.515,30,2001,999,2025-01-20
+S005,Southtown Library,library,42.420,-76.495,220,1989,90,2024-11-30
+S006,Maple Park,park,42.455,-76.460,0,1955,58,2025-02-14
+S007,North Community Center,community_center,42.470,-76.480,180,2010,78,
+S008,Westend Clinic,clinic,42.430,-76.520,45,1996,83,2025-03-05
