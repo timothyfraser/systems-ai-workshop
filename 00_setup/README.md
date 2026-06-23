@@ -18,7 +18,7 @@ Complete these in order:
 1. [ACTIVITY: Install Git and a Terminal](ACTIVITY_git.md)
 2. [ACTIVITY: Install Claude Desktop](ACTIVITY_claude_desktop.md)
 3. [ACTIVITY: Install Cursor](ACTIVITY_cursor.md)
-4. [ACTIVITY: Install Ollama](ACTIVITY_ollama.md) — the local-AI engine; we go deep on it in [`04_local_ai/`](../04_local_ai/README.md)
+4. [ACTIVITY: Install Ollama](ACTIVITY_ollama.md) — the local-AI engine; we go deep on it in [`04_local/`](../04_local/README.md)
 
 ---
 

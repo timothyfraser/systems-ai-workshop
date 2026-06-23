@@ -18,7 +18,7 @@ Cursor is built on **Visual Studio Code**, so it runs the same extensions. Add a
 
 | Extension | Why | Priority |
 |-----------|-----|----------|
-| **Continue** | Local AI coding agent pointed at Ollama — the privacy track ([module 04](../04_local_ai/ACTIVITY_continue_local.md)) | ⭐⭐⭐⭐⭐ |
+| **Continue** | Local AI coding agent pointed at Ollama — the privacy track ([module 04](../04_local/ACTIVITY_continue_local.md)) | ⭐⭐⭐⭐⭐ |
 | **Python** (Microsoft) | Python language support, linting, debugging, Jupyter | ⭐⭐⭐⭐⭐ |
 | **R** (REditorSupport) | R language support and execution | ⭐⭐⭐⭐ |
 | **Markdown Preview Enhanced** | Rich Markdown preview with math and diagrams | ⭐⭐⭐⭐⭐ |

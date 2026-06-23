@@ -28,7 +28,7 @@ How you ask shapes how much you can trust the answer:
 
 - **Ask for reasoning, not just results.** "Explain why" surfaces faulty assumptions.
 - **Ask it to cite or show its work** so claims are checkable.
-- **Invite disagreement:** "What's wrong with this approach? What did I miss?" (This is the whole point of [red-teaming](../02_red_team_research/README.md).)
+- **Invite disagreement:** "What's wrong with this approach? What did I miss?" (This is the whole point of [red-teaming](../02_redteam/README.md).)
 - **Never assume confidence equals correctness.** A fluent, certain-sounding answer can be completely wrong.
 - **Keep a human in the loop** for any decision with real consequences.
 

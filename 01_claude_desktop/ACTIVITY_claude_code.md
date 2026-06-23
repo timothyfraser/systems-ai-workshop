@@ -33,9 +33,9 @@ claude
 
 - [ ] Ask Claude Code to make a small, safe change and show you the diff:
   ```
-  Add a one-line description next to each model in 04_local_ai/READ_models.md, then show me the diff before saving.
+  Add a one-line description next to each model in 04_local/READ_models.md, then show me the diff before saving.
   ```
-- [ ] Review, then accept or reject. **Always read the diff** — see [zero-trust](../04_local_ai/READ_security.md).
+- [ ] Review, then accept or reject. **Always read the diff** — see [zero-trust](../04_local/READ_security.md).
 
 ---
 

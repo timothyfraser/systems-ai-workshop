@@ -1,4 +1,4 @@
-# ⭐ README `/04_local_ai`
+# ⭐ README `/04_local`
 
 > Run capable AI **entirely on your own laptop** — no data center, no cloud, nothing leaving your machine. This is the answer to *"I love this, but I can't send my data anywhere."* You can, in fact, code with an AI agent on a plane with the Wi-Fi off.
 

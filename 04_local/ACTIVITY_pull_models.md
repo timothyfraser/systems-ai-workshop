@@ -27,7 +27,7 @@ Pick the row that matches your laptop and run those commands:
 
 - [ ] Or just run the auto-detecting script:
   ```bash
-  bash 04_local_ai/scripts/setup_local_ai.sh
+  bash 04_local/scripts/setup_local_ai.sh
   ```
 
 ### 🧱 Stage 3: Read a model tag

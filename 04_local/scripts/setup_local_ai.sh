@@ -10,7 +10,7 @@
 #   4. Prints next steps for wiring up a local coding agent.
 #
 # Usage:
-#   bash 04_local_ai/scripts/setup_local_ai.sh
+#   bash 04_local/scripts/setup_local_ai.sh
 #
 # Nothing here sends your data anywhere. Models run on localhost only.
 
@@ -99,12 +99,12 @@ cat <<'EOF'
      ollama run qwen2.5-coder:7b "Refactor this for readability: x=lambda a,b:a if a>b else b"
 
    Wire up a local coding agent (least friction first):
-     • Start here → 04_local_ai/ACTIVITY_continue_local.md   (Continue, in your editor)
-     • Autonomous agent → 04_local_ai/ACTIVITY_cline_local.md (Cline; raise num_ctx!)
+     • Start here → 04_local/ACTIVITY_continue_local.md   (Continue, in your editor)
+     • Autonomous agent → 04_local/ACTIVITY_cline_local.md (Cline; raise num_ctx!)
 
    Pick a different model for your hardware:
-     • 04_local_ai/READ_models.md
-     • 04_local_ai/READ_quantization.md
+     • 04_local/READ_models.md
+     • 04_local/READ_quantization.md
 
    📊 Summary: Ollama is serving on http://localhost:11434 — nothing leaves your machine.
 EOF

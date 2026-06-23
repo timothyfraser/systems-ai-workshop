@@ -25,13 +25,13 @@ Install **Cursor**, an AI-powered code editor built on **Visual Studio Code**. W
 
 ### 🧱 Stage 3: (Optional) Recommended extensions
 
-- [ ] See [`03_cursor_vs_claude/READ_extensions.md`](../03_cursor_vs_claude/READ_extensions.md) for a short list of helpful extensions (Markdown preview, Python, R, etc.). Install only what you need.
+- [ ] See [`03_cursor/READ_extensions.md`](../03_cursor/READ_extensions.md) for a short list of helpful extensions (Markdown preview, Python, R, etc.). Install only what you need.
 
 ---
 
 ## 💡 Cursor and your data
 
-By default, Cursor sends your prompts and relevant code to its cloud to coordinate responses — even when a model "runs locally." If keeping data off the network matters to you, that's exactly what [`04_local_ai/`](../04_local_ai/README.md) is for: a **truly local** setup using Ollama + Continue. We'll be honest about the trade-offs there.
+By default, Cursor sends your prompts and relevant code to its cloud to coordinate responses — even when a model "runs locally." If keeping data off the network matters to you, that's exactly what [`04_local/`](../04_local/README.md) is for: a **truly local** setup using Ollama + Continue. We'll be honest about the trade-offs there.
 
 ---
 

@@ -44,7 +44,7 @@ Cite the section/page for every point.
 
 ## Privacy note
 
-Unpublished work is sensitive. If the user is wary of sending a manuscript to the cloud, recommend running this same review against a **local model** (Ollama, e.g. a strong reasoner like `phi4`) so nothing leaves their machine. See `04_local_ai/`.
+Unpublished work is sensitive. If the user is wary of sending a manuscript to the cloud, recommend running this same review against a **local model** (Ollama, e.g. a strong reasoner like `phi4`) so nothing leaves their machine. See `04_local/`.
 
 ## Anti-patterns
 

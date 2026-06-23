@@ -35,7 +35,7 @@ Give Cursor access to the **official documentation** for a library you use, so i
 
 ## 💡 Why this matters
 
-Libraries change. Pointing the agent at current docs reduces hallucinated function names and outdated patterns — a small step toward the [zero-trust](../04_local_ai/READ_security.md) habit of giving the model good inputs and verifying its outputs.
+Libraries change. Pointing the agent at current docs reduces hallucinated function names and outdated patterns — a small step toward the [zero-trust](../04_local/READ_security.md) habit of giving the model good inputs and verifying its outputs.
 
 ---
 

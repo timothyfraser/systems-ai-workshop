@@ -25,7 +25,7 @@ A local model on a laptop is **smaller and weaker** than a frontier cloud model.
 
 - **Commit before letting an agent edit.** A clean working tree is your undo button.
 - Review every change with `git show` / `git diff`; undo a bad edit with `git revert`.
-- This is the [zero-trust](../../../04_local_ai/READ_security.md) habit: treat generated code as untrusted, verify before running.
+- This is the [zero-trust](../../../04_local/READ_security.md) habit: treat generated code as untrusted, verify before running.
 
 ## Pick the right model for the hardware
 
@@ -38,7 +38,7 @@ A local model on a laptop is **smaller and weaker** than a frontier cloud model.
 | Reasoning/analysis | `phi4` | ~16 GB |
 | Driving an agent | `devstral` | ~24–32 GB |
 
-Use `Q4_K_M` quantization by default. See `04_local_ai/READ_models.md` and `READ_quantization.md`.
+Use `Q4_K_M` quantization by default. See `04_local/READ_models.md` and `READ_quantization.md`.
 
 ## Tooling (least friction first)
 

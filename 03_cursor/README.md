@@ -1,4 +1,4 @@
-# ⚖️ README `/03_cursor_vs_claude`
+# ⚖️ README `/03_cursor`
 
 > Two different tools, two different jobs. **Cursor** is an IDE-integrated coding agent that sees your whole project; **Claude Desktop** is a conversational analyst that thinks problems through with you. This module is a hands-on comparison so you know which to reach for.
 

@@ -1,4 +1,4 @@
-# 🎯 README `/02_red_team_research`
+# 🎯 README `/02_redteam`
 
 > Turn AI into your harshest, most useful reviewer. Feed a paper and its reviewer feedback into Claude and ask it to **attack** the work — find the logical gaps, the soft methods, the unclear claims — *before* a journal does.
 

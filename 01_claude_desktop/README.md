@@ -27,7 +27,7 @@ This repo's [`.claude/skills/`](../.claude/skills/) folder ships ready-to-use Sk
 
 - [`html-poster`](../.claude/skills/html-poster/SKILL.md) — turn a description into a clean, printable HTML poster or flyer
 - [`claude-desktop-routines`](../.claude/skills/claude-desktop-routines/SKILL.md) — design reusable routines for recurring tasks
-- [`red-team-research`](../.claude/skills/red-team-research/SKILL.md) — adversarial review of a paper (used in [module 02](../02_red_team_research/README.md))
+- [`red-team-research`](../.claude/skills/red-team-research/SKILL.md) — adversarial review of a paper (used in [module 02](../02_redteam/README.md))
 
 ---
 

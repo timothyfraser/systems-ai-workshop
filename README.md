@@ -47,9 +47,9 @@ Work through these in order, or jump to what you need:
 |---|--------|----------------|
 | 00 | [Setup](00_setup/README.md) | Install Git, Claude Desktop, Cursor, and Ollama |
 | 01 | [Claude Desktop: Skills & Routines](01_claude_desktop/README.md) | Build HTML posters/flyers, reusable routines, and meet Claude Code |
-| 02 | [Red-Teaming Your Research](02_red_team_research/README.md) | Run an adversarial review of your own paper |
-| 03 | [Cursor vs. Claude](03_cursor_vs_claude/README.md) | When to use an IDE agent vs. a conversational analyst |
-| 04 | [**Local AI (Ollama & BYOM)**](04_local_ai/README.md) | Run Qwen, Gemma, Phi, and Devstral on your laptop — no data center |
+| 02 | [Red-Teaming Your Research](02_redteam/README.md) | Run an adversarial review of your own paper |
+| 03 | [Cursor vs. Claude](03_cursor/README.md) | When to use an IDE agent vs. a conversational analyst |
+| 04 | [**Local AI (Ollama & BYOM)**](04_local/README.md) | Run Qwen, Gemma, Phi, and Devstral on your laptop — no data center |
 
 ---
 
@@ -58,7 +58,7 @@ Work through these in order, or jump to what you need:
 | Tool | Best at | Where it runs |
 |------|---------|---------------|
 | **Claude Desktop** | Conversational analysis, document creation, red-teaming, Skills/routines | Anthropic cloud |
-| **Cursor** | Multi-file code context, refactoring, IDE-integrated coding | Cloud-coordinated (see [the honest note](04_local_ai/README.md#-the-honest-truth-about-cursor-and-local-models)) |
+| **Cursor** | Multi-file code context, refactoring, IDE-integrated coding | Cloud-coordinated (see [the honest note](04_local/README.md#-the-honest-truth-about-cursor-and-local-models)) |
 | **Ollama + a local agent** | Private coding & analysis with **zero data leaving your machine** | 100% local |
 
 The repo ships with a ready-to-use **[`.claude/`](.claude/)** folder (Skills for posters, routines, and research red-teaming) and a **[`.cursor/`](.cursor/)** folder (coding-style rules and a local-model coding Skill). Open the repo in either tool and they activate automatically.
@@ -72,9 +72,9 @@ systems-ai-workshop/
 ├── README.md
 ├── 00_setup/                 # install everything before you arrive
 ├── 01_claude_desktop/        # Skills, routines, HTML docs, Claude Code
-├── 02_red_team_research/     # adversarial review of your own work
-├── 03_cursor_vs_claude/      # IDE agent vs. conversational analyst
-├── 04_local_ai/              # ⭐ Ollama + local models + local agents
+├── 02_redteam/               # adversarial review of your own work
+├── 03_cursor/                # IDE agent vs. conversational analyst
+├── 04_local/                 # ⭐ Ollama + local models + local agents
 │   └── scripts/              # one-command local setup
 ├── .claude/                  # Skills that load in Claude Desktop / Claude Code
 │   └── skills/

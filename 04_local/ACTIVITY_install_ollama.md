@@ -42,7 +42,7 @@ ollama run gemma4:e4b
 Instead of pulling models by hand, run the setup script. It detects your RAM and pulls a model set that fits:
 
 ```bash
-bash 04_local_ai/scripts/setup_local_ai.sh
+bash 04_local/scripts/setup_local_ai.sh
 ```
 
 - [ ] Check what you have installed:

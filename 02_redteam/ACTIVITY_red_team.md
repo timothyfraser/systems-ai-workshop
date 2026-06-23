@@ -36,7 +36,7 @@ Run an **adversarial review** of one of your own papers (a draft, a revise-and-r
 ## ⚠️ Use it well
 
 - **You decide what's valid.** The model proposes; you dispose. Some objections will be wrong — that's fine, you're looking for the *useful* ones.
-- **Privacy:** unpublished work is sensitive. If you'd rather not send a manuscript to the cloud, run this critique against a **local model** ([module 04](../04_local_ai/README.md)) — a strong reasoner like `phi4` does a creditable job.
+- **Privacy:** unpublished work is sensitive. If you'd rather not send a manuscript to the cloud, run this critique against a **local model** ([module 04](../04_local/README.md)) — a strong reasoner like `phi4` does a creditable job.
 - **Don't outsource judgment.** Red-teaming sharpens your argument; it doesn't replace your expertise.
 
 ---

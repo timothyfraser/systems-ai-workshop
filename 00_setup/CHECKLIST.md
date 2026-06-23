@@ -21,7 +21,7 @@
   git clone https://github.com/timothyfraser/systems-ai-workshop.git
   cd systems-ai-workshop
   ```
-- [ ] You know **how much RAM** your laptop has (Task Manager on Windows, "About This Mac" on macOS). This decides which local models you can run — see [the quantization guide](../04_local_ai/READ_quantization.md).
+- [ ] You know **how much RAM** your laptop has (Task Manager on Windows, "About This Mac" on macOS). This decides which local models you can run — see [the quantization guide](../04_local/READ_quantization.md).
 
 ---
 
