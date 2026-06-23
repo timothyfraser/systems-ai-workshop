@@ -1,0 +1,37 @@
+---
+description: Apply when writing or editing code (.py, .R, .js, .sh) in this workshop repo
+globs: ["**/*.py", "**/*.R", "**/*.r", "**/*.sh"]
+alwaysApply: false
+---
+# Coding style for workshop examples
+
+## Audience
+- Systems-engineering faculty, mixed coding backgrounds.
+- Code is a **teaching artifact**: clear and explainable beats clever and terse.
+
+## Principles
+- **Readable over clever.** Prefer obvious code; optimize only a proven hotspot.
+- **Comment the *why*,** not just the *what*. A short comment above each logical block.
+- **Small, named steps.** Descriptive variable names (`monthly_totals`, not `mt`).
+- **Fail loudly and safely.** Validate inputs; print a clear message on failure (no silent `except: pass`).
+- **No secrets in code.** Read keys from the environment or a gitignored `.env`.
+
+## Language notes
+- **Python:** prefer `pandas` for data work; method chaining when it aids readability; `pathlib` for paths; f-strings for messages.
+- **R:** prefer the **tidyverse** (`dplyr`, `readr`, `ggplot2`); use the native pipe `|>`; `readr::read_csv()` over base `read.csv()`. Use `=` for assignment to match course style.
+- **Shell:** `set -euo pipefail` at the top; quote variables; prefer explicit, portable commands.
+
+## Header for a teaching script
+```
+# script_name.ext
+# One-line title
+# What this teaches and why it's useful (2–3 sentences).
+```
+
+## Console output
+End scripts with clear progress: a banner, a line per step (✅/⚠️/❌ + a key fact), row/length counts after loads, and output paths when files are written. Logs should be useful when pasted into an AI chat for debugging. Never print secrets.
+
+## Avoid
+- Dense one-liners that need a paragraph to explain.
+- Unexplained magic numbers.
+- Copy-pasted blocks that should be a function.

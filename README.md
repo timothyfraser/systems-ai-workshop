@@ -1,2 +1,90 @@
-# systems-ai-workshop
-Code and walkthroughs for getting started using AI frameworks for faculty research and teaching
+# 🛠️ Systems AI-X Workshop
+
+> A hands-on workshop for **Systems Engineering faculty at Cornell** on using AI to do real academic work: write and design documents, pressure-test your research, code faster, and — when you'd rather not send your data to a data center — run capable AI models **entirely on your own laptop**.
+
+*Maintained by Prof. Tim Fraser. The "X" was added by management. We choose to read it as **cross-disciplinary**, **experimental**, and **bring-your-own-everything**.*
+
+---
+
+## 📋 Table of Contents
+
+- [Before You Arrive](#-before-you-arrive)
+- [What You'll Learn](#-what-youll-learn)
+- [Modules](#-modules)
+- [The Three Tools](#-the-three-tools)
+- [Repo Layout](#-repo-layout)
+
+---
+
+## 🚨 Before You Arrive
+
+Please install four things **before** the workshop. The full, click-by-click instructions live in [`00_setup/`](00_setup/README.md):
+
+1. **Git** — version control + a Unix-like terminal
+2. **Claude Desktop** — Anthropic's desktop app (Skills, routines, Claude Code)
+3. **Cursor** — an AI-powered code editor (free for students/faculty)
+4. **Ollama** — runs AI models locally on your machine
+
+👉 Start here: **[`00_setup/README.md`](00_setup/README.md)** — about 45 minutes, mostly downloads.
+
+If you only do one thing, do the [setup checklist](00_setup/CHECKLIST.md).
+
+---
+
+## 🎯 What You'll Learn
+
+This workshop is about **high-leverage, practical** AI workflows for faculty — automating administrative work, raising research rigor, and speeding up coding — with a strong thread on **privacy and local control**.
+
+A running theme: **treat AI output as untrusted input.** Models are assistants, not authorities. We code and write *with* them, and we verify everything — a habit that matters even more for students headed into regulated sectors like the DoD.
+
+---
+
+## 🧱 Modules
+
+Work through these in order, or jump to what you need:
+
+| # | Module | What you'll do |
+|---|--------|----------------|
+| 00 | [Setup](00_setup/README.md) | Install Git, Claude Desktop, Cursor, and Ollama |
+| 01 | [Claude Desktop: Skills & Routines](01_claude_desktop/README.md) | Build HTML posters/flyers, reusable routines, and meet Claude Code |
+| 02 | [Red-Teaming Your Research](02_red_team_research/README.md) | Run an adversarial review of your own paper |
+| 03 | [Cursor vs. Claude](03_cursor_vs_claude/README.md) | When to use an IDE agent vs. a conversational analyst |
+| 04 | [**Local AI (Ollama & BYOM)**](04_local_ai/README.md) | Run Qwen, Gemma, Phi, and Devstral on your laptop — no data center |
+
+---
+
+## 🧩 The Three Tools
+
+| Tool | Best at | Where it runs |
+|------|---------|---------------|
+| **Claude Desktop** | Conversational analysis, document creation, red-teaming, Skills/routines | Anthropic cloud |
+| **Cursor** | Multi-file code context, refactoring, IDE-integrated coding | Cloud-coordinated (see [the honest note](04_local_ai/README.md#-the-honest-truth-about-cursor-and-local-models)) |
+| **Ollama + a local agent** | Private coding & analysis with **zero data leaving your machine** | 100% local |
+
+The repo ships with a ready-to-use **[`.claude/`](.claude/)** folder (Skills for posters, routines, and research red-teaming) and a **[`.cursor/`](.cursor/)** folder (coding-style rules and a local-model coding Skill). Open the repo in either tool and they activate automatically.
+
+---
+
+## 🗂️ Repo Layout
+
+```
+systems-ai-workshop/
+├── README.md
+├── 00_setup/                 # install everything before you arrive
+├── 01_claude_desktop/        # Skills, routines, HTML docs, Claude Code
+├── 02_red_team_research/     # adversarial review of your own work
+├── 03_cursor_vs_claude/      # IDE agent vs. conversational analyst
+├── 04_local_ai/              # ⭐ Ollama + local models + local agents
+│   └── scripts/              # one-command local setup
+├── .claude/                  # Skills that load in Claude Desktop / Claude Code
+│   └── skills/
+├── .cursor/                  # rules + Skills that load in Cursor
+│   ├── rules/
+│   └── skills/
+└── docs/
+    └── AGENDA.md             # the day's running order
+```
+
+---
+
+← 🏠 [Back to Top](#-table-of-contents)
