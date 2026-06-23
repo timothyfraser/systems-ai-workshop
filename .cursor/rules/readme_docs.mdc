@@ -1,0 +1,36 @@
+---
+description: Apply when writing or editing README and Markdown docs in this repo
+globs: ["**/README*.md", "**/*.md"]
+alwaysApply: false
+---
+# README & Markdown house style
+
+## Voice
+- **Concise and humble.** Assume an intelligent reader who is new to these tools.
+- **Direct.** State facts plainly. Avoid filler: never write "obviously," "clearly," "it is critical," "as you can see."
+- Use **bold** for key terms and file names; *italics* for soft emphasis; `inline code` for commands, filenames, and functions.
+
+## Structure
+- Start with an icon + `# Title`, then a one- or two-sentence blockquote describing the page.
+- A short **Table of Contents** with anchor links when the page has several sections.
+- `##` for sections, `###` for subsections — rarely deeper.
+- READMEs are **navigation guides**: list what exists and the order to do it in; push details into the individual files.
+- End with a `← 🏠 [Back to Top](#table-of-contents)` (or back-to-README) link.
+
+## Activities sections
+When listing activities, number them to show sequence and use human-readable names with prefixes:
+```markdown
+1. [ACTIVITY: Install Ollama](ACTIVITY_install_ollama.md)
+2. [READ: Quantization, Explained](READ_quantization.md)
+3. [LAB: Build a Local Agent](LAB_local_agent.md)
+```
+For code/script files, link with the filename in backticks: ``[`setup.sh`](scripts/setup.sh)``.
+
+## Icons
+Use icons to aid scanning, consistently:
+- 🚨 critical/before-you-start · ✅ done/checklist · ⚠️ warning · 💡 tip · 🔧 setup · 📌 activity · 🎯 objective · 📤 submit/try-it
+
+## Always
+- Add a relative hyperlink whenever you mention a file.
+- Include runnable, copy-pasteable code blocks with the right language tag.
+- Keep line and section length reasonable; favor lists over walls of text.
