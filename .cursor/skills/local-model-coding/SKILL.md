@@ -1,14 +1,14 @@
 ---
 name: local-model-coding
 description: >-
-  Guidance for coding effectively with a LOCAL model (Ollama via Pi or Continue) instead
+  Guidance for coding effectively with a LOCAL model (Ollama via Continue or Cline) instead
   of a frontier cloud model — scope tasks small, lean on git for safety, choose the right
-  local model for the hardware, and verify output under zero-trust. Use when the user is
-  working offline/privately with Ollama, asks why a local model is weaker, or wants the best
-  workflow for local AI coding on a laptop.
+  local model for the hardware, raise the context window for agents, and verify output under
+  zero-trust. Use when the user is working offline/privately with Ollama, asks why a local
+  model is weaker, or wants the best workflow for local AI coding on a laptop.
 ---
 
-# Coding with a local model (Ollama + Pi/Continue)
+# Coding with a local model (Ollama + Continue/Cline)
 
 ## Why this is different
 
@@ -40,10 +40,17 @@ A local model on a laptop is **smaller and weaker** than a frontier cloud model.
 
 Use `Q4_K_M` quantization by default. See `04_local_ai/READ_models.md` and `READ_quantization.md`.
 
-## Tooling
+## Tooling (least friction first)
 
-- **In the terminal:** **Pi** (`pi.dev`) — a minimal harness pointed at Ollama's OpenAI-compatible endpoint (`http://localhost:11434/v1`, config in `~/.pi/agent/models.json`). **OpenCode** and **Aider** are fine alternatives at the same endpoint.
-- **In the editor:** **Continue**, pointed at `http://localhost:11434`. Smaller model for autocomplete, bigger for chat/edit.
+- **Start with Continue** (in-editor): one-click extension in Cursor/VS Code, auto-detects Ollama on `http://localhost:11434`. Smaller model for autocomplete, bigger for chat/edit.
+- **Step up to Cline** for an autonomous in-editor agent. Two requirements: a capable model (24B+/Qwen3-Coder, not a 7B) and a **raised context window** — agents exhaust Ollama's default 2–4K and silently fail. Fix once:
+  ```dockerfile
+  # Modelfile
+  FROM qwen3-coder:30b
+  PARAMETER num_ctx 32768
+  ```
+  `ollama create qwen3-coder-32k -f Modelfile`, then point Cline at it.
+- **Terminal preference:** **Aider** (`pip install aider-chat`, `OLLAMA_API_BASE=http://localhost:11434`, `--model ollama_chat/<tag>`). OpenCode and Pi are other terminal options.
 - **Not Cursor's "local" mode** for true privacy — it still coordinates through Cursor's servers.
 
 ## When the local model struggles

@@ -1,14 +1,14 @@
 # 📌 ACTIVITY
 
-## Wire Up Continue (Local Coding in Your Editor)
+## Continue — The Low-Friction Local Setup (Start Here)
 
-🕒 *Estimated Time: 20 minutes*
+🕒 *Estimated Time: 15 minutes*
 
 ---
 
 ## ✅ Your Task
 
-Install **Continue**, the open-source coding assistant that runs **inside Cursor or VS Code** and talks **directly to Ollama on `localhost`** — no cloud, no account, nothing leaving your machine. This is the truly-private alternative to Cursor's built-in (cloud-coordinated) agent. *(For why Cursor itself can't be fully local, see [the honest note](README.md#-the-honest-truth-about-cursor-and-local-models).)*
+Install **Continue**, the open-source coding assistant that runs **inside Cursor or VS Code** and talks **directly to Ollama on `localhost`** — no cloud, no account, nothing leaving your machine. It's the **lowest-friction** way to get local AI help: one-click install, it auto-detects Ollama, and it works fine on a modest laptop. This is where to start; step up to [Cline](ACTIVITY_cline_local.md) when you want an autonomous agent. *(For why Cursor's own "local" mode isn't truly private, see [the honest note](README.md#-the-honest-truth-about-cursor-and-local-models).)*
 
 ### 🧱 Stage 1: Prerequisites
 

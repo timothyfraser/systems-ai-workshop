@@ -18,7 +18,7 @@ Treat generated code the way a careful reviewer treats a stranger's pull request
 - [ ] **Run it in a safe place first** — a scratch folder, a container, a fresh virtual environment — never straight against production data or credentials.
 - [ ] **Watch for dangerous operations:** file deletion (`rm -rf`), network calls to unknown hosts, `curl ... | bash`, broad permission changes, or anything touching secrets.
 - [ ] **Verify dependencies it suggests.** Models sometimes invent package names ("slopsquatting") or pick abandoned ones. Confirm a package is real and maintained before installing.
-- [ ] **Commit before you let an agent edit.** With a git-aware harness like Pi or Aider, every change is reversible. A clean working tree is your undo button.
+- [ ] **Commit before you let an agent edit.** With a git-aware harness (Cline, Aider), every change is reversible. A clean working tree is your undo button. Keep "auto-approve" off until you trust a workflow.
 
 ---
 
