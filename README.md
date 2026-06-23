@@ -57,11 +57,14 @@ Work through these in order, or jump to what you need:
 
 | Tool | Best at | Where it runs |
 |------|---------|---------------|
-| **Claude Desktop** | Conversational analysis, document creation, red-teaming, Skills/routines | Anthropic cloud |
+| **Claude Desktop** | Skills, interactive tutorials, red-teaming, **sub-agents**, one-command skill suites | Anthropic cloud |
 | **Cursor** | Multi-file code context, refactoring, IDE-integrated coding | Cloud-coordinated (see [the honest note](04_local/README.md#-the-honest-truth-about-cursor-and-local-models)) |
 | **Ollama + a local agent** | Private coding & analysis with **zero data leaving your machine** | 100% local |
 
-The repo ships with a ready-to-use **[`.claude/`](.claude/)** folder (Skills for posters, routines, and research red-teaming) and a **[`.cursor/`](.cursor/)** folder (coding-style rules and a local-model coding Skill). Open the repo in either tool and they activate automatically.
+The repo ships ready-to-use config folders that activate automatically when you open it:
+
+- **[`.claude/`](.claude/)** — Skills (`interactive-toolmaker`, `html-poster`, `red-team-research`, `claude-desktop-routines`), the [`/orient`](.claude/commands/orient.md) command, and the [`column-documenter`](.claude/agents/column-documenter.md) sub-agent
+- **[`.cursor/`](.cursor/)** — coding-style + README rules and a local-model coding Skill
 
 ---
 

@@ -13,7 +13,6 @@
 | [🔧 Refactor in place](ACTIVITY_refactor.md) ⭐ | clean up a messy script with one inline edit | multi-file, in-editor editing |
 | [📐 Make a rule](ACTIVITY_rule.md) | teach Cursor a preference it keeps | persistent, project-wide style |
 | [📚 Add live docs](ACTIVITY_docs.md) | point Cursor at a library's real docs | accurate, current suggestions |
-| [⚖️ Cursor vs. Claude](ACTIVITY_compare.md) | run one task in both, feel the difference | when to use which |
 
 Each card hands you the exact steps and prompt.
 

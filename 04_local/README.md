@@ -10,8 +10,7 @@
 
 | Card | You'll do | The point |
 |------|-----------|-----------|
-| [⚡ Two-model bake-off](ACTIVITY_run_compare.md) ⭐ | run the same prompt through two local models | feel the size/speed/quality trade |
-| [🔒 Private inline edit](ACTIVITY_private_edit.md) | refactor code locally with Continue | a real coding agent, fully offline |
+| [🔒 Private inline edit](ACTIVITY_private_edit.md) ⭐ | refactor code locally with Continue | a real coding agent, fully offline |
 | [✈️ Prove it's offline](ACTIVITY_offline_proof.md) | turn off Wi-Fi and keep working | privacy you can see |
 
 ---
@@ -22,7 +21,7 @@
 - [READ: Quantization, Explained for Laptops](READ_quantization.md)
 - [READ: The Ollama Harness Landscape (2026)](READ_harnesses.md)
 - [READ: Security & Zero-Trust for AI Output](READ_security.md)
-- Setup references: [Install Ollama](ACTIVITY_install_ollama.md) · [Pull models](ACTIVITY_pull_models.md) · [Continue](ACTIVITY_continue_local.md) · [Cline (agent)](ACTIVITY_cline_local.md)
+- Setup references: [Install Ollama](../00_setup/ACTIVITY_ollama.md) · [Continue](ACTIVITY_continue_local.md) · [Cline (agent)](ACTIVITY_cline_local.md)
 - One-command setup: [`scripts/setup_local_ai.sh`](scripts/setup_local_ai.sh)
 
 ---
