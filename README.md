@@ -13,6 +13,7 @@
 - [Modules](#-modules)
 - [The Three Tools](#-the-three-tools)
 - [Repo Layout](#-repo-layout)
+- [Agenda](#-agenda)
 
 ---
 
@@ -68,6 +69,8 @@ systems-ai-workshop/
 ├── README.md
 ├── 00_setup/                 # quick start — the one required install (Claude Desktop)
 ├── 01_claude/                # ⭐ the main event — activity cards
+│   ├── slides/               # the Marp deck (published to GitHub Pages)
+│   └── output/               # real example results (HTML, codebook, flyer…)
 ├── 02_redteam/               # (bonus) adversarial review of your own work
 ├── 03_cursor/                # (bonus) IDE-integrated coding agent
 ├── 04_local/                 # (bonus) Ollama + local models + local agents
@@ -79,9 +82,31 @@ systems-ai-workshop/
 ├── .cursor/                  # rules + Skills that load in Cursor
 │   ├── rules/
 │   └── skills/
-└── docs/
-    └── AGENDA.md             # the day's running order
+└── .github/
+    ├── workflows/            # builds the slides + outputs to GitHub Pages
+    └── scripts/              # screenshot tooling for the deck
 ```
+
+---
+
+## 🗓️ Agenda
+
+> The live session focuses on **Claude Desktop**. Everything else is bonus, self-serve. Times are flexible.
+
+**Before the day:** make sure you've installed **Claude Desktop** — the one requirement (Git optional). See the [quick start](00_setup/README.md).
+
+| Time | Block | Link |
+|------|-------|------|
+| 0:00 | Welcome + why "AI-X" | — |
+| 0:10 | Demo: chat, **Skills**, and **Claude Code** | [01](01_claude/README.md) |
+| 0:25 | **Round 1** — groups each pick a card, run it, regroup | [card menu](01_claude/README.md#-activity-menu) |
+| 0:55 | **Round 2** — pick a different card, run it, regroup | [card menu](01_claude/README.md#-activity-menu) |
+| 1:25 | Show & tell + discussion | — |
+| 1:45 | Open lab / bring your own problem | — |
+
+Each round: ~5 min build + a few minutes to compare. Cards: interactive tutorial, poster, red team, monthly routine, code cleanup, skill suite, sub-agents.
+
+**Bonus, any time:** [Red-Teaming](02_redteam/README.md) · [Cursor](03_cursor/README.md) · [Local AI (Ollama)](04_local/README.md).
 
 ---
 

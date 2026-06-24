@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Keep on Track — example result</title><style>
+body{font:16px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;color:#1a1a2e;margin:0;background:#f6f7f9}
+.w{max-width:800px;margin:0 auto;padding:20px}
+.cap{font:12px ui-monospace,Menlo,monospace;color:#8a1414;margin:0 0 10px}
+.doc{background:#fff;border:1px solid #e8e6ea;border-left:4px solid #b31b1b;border-radius:10px;padding:16px 18px}
+.doc h2{color:#b31b1b;font-size:17px;margin:.1em 0 .5em}
+.doc h3{color:#8a1414;font-size:14px;margin:1em 0 .2em}
+.doc code{font-family:ui-monospace,Menlo,monospace}
+table{border-collapse:collapse;font-size:13px;margin:.3em 0} th{background:#b31b1b;color:#fff;padding:4px 8px;text-align:left} td{border-bottom:1px solid #eee;padding:4px 8px}
+ul{margin:.2em 0 .2em 1.05em;padding:0} li{margin:.2em 0} b{color:#8a1414}
+</style></head><body><div class="w">
+<p class="cap">/system-requirements → REQUIREMENTS.md</p>
+<div class="doc">
+<h2>REQUIREMENTS.md — Weekly data reporter</h2>
+<h3>User needs</h3>
+<ul><li><b>UN-1:</b> As a PI, I need a weekly email summary so I don't have to log in to check.</li></ul>
+<h3>Functional requirements</h3>
+<ul>
+<li><b>FR-1</b> (→UN-1): Pull the API daily. <i>Acceptance:</i> a dated row lands in SQLite each run.</li>
+<li><b>FR-2</b> (→UN-1): Email a Monday summary with a chart. <i>Acceptance:</i> email arrives by 8am with last week's trend.</li>
+</ul>
+<h3>Traceability</h3>
+<table><tr><th>Need</th><th>Function</th><th>Acceptance / test</th></tr>
+<tr><td>UN-1</td><td>FR-1</td><td>row appended daily</td></tr>
+<tr><td>UN-1</td><td>FR-2</td><td>email by Mon 8am</td></tr></table>
+</div>
+</div></body></html>

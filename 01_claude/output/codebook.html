@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Codebook — example result</title><style>
+body{font:16px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;color:#1a1a2e;margin:0;background:#f6f7f9}
+.w{max-width:800px;margin:0 auto;padding:20px}
+.cap{font:12px ui-monospace,Menlo,monospace;color:#8a1414;margin:0 0 10px}
+h2{color:#b31b1b;font-size:18px;margin:.2em 0 .4em}
+.card{background:#fff;border:1px solid #e8e6ea;border-left:4px solid #b31b1b;border-radius:10px;padding:12px 14px;margin:10px 0}
+.card h3{margin:0 0 .3em;font:600 15px ui-monospace,Menlo,monospace;color:#1a1a2e}
+.k{color:#5a6472;font-size:13px} b{color:#8a1414}
+.warn{background:#fdeeee;border-radius:6px;padding:6px 9px;margin-top:6px;font-size:13px}
+</style></head><body><div class="w">
+<p class="cap">/column-documenter → one sub-agent per column → CODEBOOK.md</p>
+<h2>🧬 Codebook — social_infra.csv <span class="k">(8 columns)</span></h2>
+<div class="card"><h3>capacity</h3>
+<div class="k">integer · range 0–400 · missing = 0 for parks</div>
+<div class="warn">⚠️ <b>Caveat:</b> the <code>0</code>s (both parks) likely mean "not applicable," not a true zero — don't average them in blindly.</div></div>
+<div class="card"><h3>access_score</h3>
+<div class="k">integer · 0–100 · no blanks</div>
+<div class="warn">⚠️ <b>Caveat:</b> S004 = <b>999</b> is a sentinel/error, not a real score — exclude it before any analysis.</div></div>
+<div class="card"><h3>last_survey</h3>
+<div class="k">date (YYYY-MM-DD) · 2024-11-30 … 2025-03-05</div>
+<div class="warn">⚠️ <b>Caveat:</b> blank for two sites — treat their other fields with extra caution.</div></div>
+<p class="k">…and 5 more columns (site_id, name, type, lat/lon, year_built), each documented the same way.</p>
+</div></body></html>

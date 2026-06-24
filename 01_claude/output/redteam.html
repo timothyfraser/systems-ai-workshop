@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Red Team — example result</title><style>
+body{font:16px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;color:#1a1a2e;margin:0;background:#f6f7f9}
+.w{max-width:800px;margin:0 auto;padding:20px}
+.cap{font:12px ui-monospace,Menlo,monospace;color:#8a1414;margin:0 0 12px}
+.who{font:600 11px ui-monospace,Menlo,monospace;letter-spacing:.05em;text-transform:uppercase;color:#5a6472;margin-bottom:6px}
+.user{background:#eef1f5;border-radius:12px;padding:13px 15px;margin:12px 0}
+.ai{background:#fff;border:1px solid #e8e6ea;border-left:4px solid #b31b1b;border-radius:12px;padding:14px 16px;margin:12px 0}
+.ai h3{color:#b31b1b;font-size:15px;margin:.6em 0 .2em}
+b{color:#8a1414} i{color:#5a6472}
+ul{margin:.3em 0 .3em 1.05em;padding:0} li{margin:.3em 0}
+</style></head><body><div class="w">
+<p class="cap">Claude Desktop · /red-team-research</p>
+<div class="user"><div class="who">You</div>Read the attached report. Give me the single strongest objection, two method gaps, and the smallest fix for each — cite the section.</div>
+<div class="ai"><div class="who">Claude</div>
+<h3>Strongest objection</h3>
+<p><b>Selection bias (§3, Sampling).</b> Sites were included <i>because</i> they already had survey data — so the "resilience" findings may reflect which places get studied, not which places are resilient. A reviewer will lead with this.<br><i>Smallest fix:</i> add a paragraph bounding external validity, or weight by inclusion probability.</p>
+<h3>Method gaps</h3>
+<ul>
+<li><b>No control for size (§4).</b> Larger sites have more capacity by construction. <i>Fix:</i> add population as a covariate.</li>
+<li><b>Sentinel values unhandled (§4).</b> An <code>access_score</code> of 999 enters the means. <i>Fix:</i> drop/flag sentinels before averaging.</li>
+</ul>
+<p><i>Where I was uncertain, I flagged it rather than inventing a criticism.</i></p>
+</div>
+</div></body></html>

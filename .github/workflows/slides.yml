@@ -1,6 +1,8 @@
 name: Deploy Slides
 
-# Builds every <folder>/slides/slides.md deck with Marp and publishes to GitHub Pages.
+# Builds every <folder>/slides/slides.md deck with Marp, copies every
+# <folder>/output/ folder of real example results, and publishes the whole
+# lot to GitHub Pages.
 # One-time: repo Settings → Pages → Source: "GitHub Actions".
 
 on:
@@ -8,6 +10,7 @@ on:
     branches: [main]
     paths:
       - "**/slides/**"
+      - "**/output/**"
       - ".github/workflows/slides.yml"
   workflow_dispatch:
 
@@ -30,20 +33,22 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Build decks with Marp
+      - name: Build decks + gallery with Marp
         run: |
           set -euo pipefail
           shopt -s nullglob
           mkdir -p _site
 
-          # Landing page
+          # Landing page header
           {
             echo '<!doctype html><meta charset="utf-8">'
-            echo '<title>Systems AI-X — Slides</title>'
-            echo '<style>body{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;max-width:680px;margin:48px auto;padding:0 16px;color:#1a1a2e}h1{color:#b31b1b}a{color:#b31b1b;text-decoration:none}a:hover{text-decoration:underline}li{margin:.5em 0;font-size:1.1em}</style>'
-            echo '<h1>🛠️ Systems AI-X — Slides</h1><ul>'
+            echo '<title>Systems AI-X — Slides &amp; Outputs</title>'
+            echo '<style>body{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;max-width:720px;margin:48px auto;padding:0 16px;color:#1a1a2e}h1{color:#b31b1b}h2{color:#8a1414;margin-top:1.6em;font-size:1.1em}a{color:#b31b1b;text-decoration:none}a:hover{text-decoration:underline}li{margin:.5em 0;font-size:1.05em}.muted{color:#5a6472;font-size:.95em}</style>'
+            echo '<h1>🛠️ Systems AI-X — Slides &amp; Outputs</h1>'
+            echo '<h2>🎞️ Slide decks</h2><ul>'
           } > _site/index.html
 
+          # 1) Render each deck
           for f in */slides/slides.md; do
             mod="$(dirname "$(dirname "$f")")"
             out="${mod}.html"
@@ -51,8 +56,23 @@ jobs:
             npx -y @marp-team/marp-cli@latest "$f" -o "_site/${out}" --html
             echo "<li>🎞️ <a href=\"${out}\">${mod}</a></li>" >> _site/index.html
           done
-
           echo '</ul>' >> _site/index.html
+
+          # 2) Copy each folder's real example outputs verbatim, and list the
+          #    human-viewable HTML in a gallery so "open ↗" links resolve.
+          echo '<h2>🖼️ Real example outputs</h2><ul>' >> _site/index.html
+          for d in */output; do
+            mod="$(dirname "$d")"
+            echo "Copying $d → _site/${d}"
+            mkdir -p "_site/${d}"
+            cp -R "$d/." "_site/${d}/"
+            for html in "$d"/*.html; do
+              name="$(basename "$html")"
+              echo "<li>🖼️ <a href=\"${d}/${name}\">${mod} · ${name}</a></li>" >> _site/index.html
+            done
+          done
+          echo '</ul>' >> _site/index.html
+          echo '<p class="muted">Generated from real Claude Desktop sessions in this repo.</p>' >> _site/index.html
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
