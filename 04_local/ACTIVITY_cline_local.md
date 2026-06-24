@@ -1,80 +1,41 @@
-# 📌 ACTIVITY
+# 🔧 SETUP · Cline (your local coding agent)
 
-## Cline — The Best-in-Field Local Coding Agent
+> **Cline** is the local coding agent for this workshop — it reads your files, writes code, and edits across a project, all pointed at Ollama on `localhost`. It runs *inside an editor you already have*, so there's nothing new to learn.
 
-🕒 *Estimated Time: 20 minutes*
+## Where to run it (pick the host you already use)
 
----
+- **Cursor** — you already installed it, so this is the fewest-tools option. ✅ start here.
+- **Any VS Code–based editor** — Cline installs the same way in **VS Code**, **Positron**, **Windsurf**, and **Zed**.
+- **Positron** — Posit's data-science IDE. If you do a lot of **R or Python** work, this is a great host; it pulls extensions from the same Open VSX catalog, so Cline installs cleanly.
 
-## ✅ Your Task
+> ⚠️ *Continue.dev is gone* — it was acquired by Cursor in 2026 and shut down. Cline is the maintained, provider-agnostic choice.
 
-When you want a local model to **autonomously plan and edit across files** — not just answer questions — **Cline** is the strongest option that runs entirely on Ollama. It's the most-installed open-source coding agent, it lives inside Cursor/VS Code (one-click install), and it points straight at `localhost`. This activity gets it working *and* applies the one tweak that makes local agents reliable.
+## Setup
 
-> Use [Continue](ACTIVITY_continue_local.md) for fast everyday help (autocomplete, inline edits, chat). Reach for **Cline** when you want to say *"implement this across the project"* and let it drive.
+**1. Prerequisites:** Ollama serving (`curl http://localhost:11434/api/version`) and a **capable** model — `qwen3-coder:30b`, `qwen2.5-coder:32b`, or `devstral`. A 7B chats fine but is unreliable as an autonomous agent.
 
-### 🧱 Stage 1: Prerequisites
+**2. Install:** in your editor, open Extensions (`Ctrl/Cmd+Shift+X`) → search **Cline** → install → open its robot icon in the sidebar.
 
-- [ ] Ollama serving — `curl http://localhost:11434/api/version`
-- [ ] **A capable model.** Autonomous agents need a strong model — `qwen3-coder:30b`, `qwen2.5-coder:32b`, or `devstral` if your machine can hold them (see [the model menu](READ_models.md)). A 7B model can *chat* well but is unreliable as an autonomous agent.
+**3. Point at Ollama:** click Cline's gear → **API Provider → Ollama** → **Base URL** `http://localhost:11434`. The model list auto-populates from whatever you've pulled. No API key.
 
-### 🧱 Stage 2: Install Cline
+**4. 🚨 The one tweak that matters — context window.** Ollama defaults to a tiny 2–4K context; an agent burns through it and then silently fails or loops. Fix once:
 
-- [ ] In **Cursor** or **VS Code**, open Extensions (`Ctrl+Shift+X` / `Cmd+Shift+X`)
-- [ ] Search **Cline**, install it, and click its robot icon in the sidebar
+```dockerfile
+# Modelfile
+FROM qwen3-coder:30b
+PARAMETER num_ctx 32768
+```
 
-### 🧱 Stage 3: Point it at Ollama
+```bash
+ollama create qwen3-coder-32k -f Modelfile
+```
 
-- [ ] In Cline's settings, set **API Provider → Ollama**
-- [ ] **Base URL:** `http://localhost:11434`
-- [ ] **Model:** pick your capable model from the dropdown
-- [ ] No API key — it's all local
+Point Cline at **`qwen3-coder-32k`**. 32K is a good floor.
 
-### 🧱 Stage 4: The one tweak that matters — context window 🚨
+**5. Use it:** give a scoped task (*"add docstrings to every function in src/"*). Keep auto-approve **off** and read diffs before accepting ([zero-trust](READ_security.md)). Commit first — git is your undo button.
 
-This is the single most important step, and the one most people miss. Ollama defaults models to a **tiny context window** (2–4K tokens). An autonomous agent burns through that in a few steps and then **silently fails or loops**. Fix it once with a custom model:
-
-- [ ] Create a file named `Modelfile`:
-  ```dockerfile
-  FROM qwen3-coder:30b
-  PARAMETER num_ctx 32768
-  ```
-- [ ] Build a roomy variant:
-  ```bash
-  ollama create qwen3-coder-32k -f Modelfile
-  ```
-- [ ] Point Cline at **`qwen3-coder-32k`** instead. 32K is a good floor for agent work; go higher if your RAM allows.
-
-### 🧱 Stage 5: Let it drive
-
-- [ ] Open a small project, open Cline, and give it a real task:
-  ```
-  Add input validation and docstrings to every function in src/, then summarize what you changed.
-  ```
-- [ ] Cline plans, reads files, proposes edits, and runs steps. **Approve actions deliberately** — keep "auto-approve" off until you trust a workflow. Read diffs before accepting ([zero-trust](READ_security.md)).
-
-### 🧱 Stage 6: Prove it's local
-
-- [ ] Turn off Wi-Fi and run another task. It keeps working. 🔌🚫
+> 🔁 Prefer the terminal? **Aider** (`pip install aider-chat`; `OLLAMA_API_BASE=http://localhost:11434`, `--model ollama_chat/<tag>`), **OpenCode**, or **Pi** all hit the same endpoint. See [the harness landscape](READ_harnesses.md).
 
 ---
 
-## ⚠️ Getting good results from a local agent
-
-- **Bigger model = more reliable agent.** Agentic work rewards 24B+ models; small models lose the plot on multi-file tasks.
-- **Raise `num_ctx`** (Stage 4) — non-negotiable for agents.
-- **Scope tasks** to a folder or feature, not the whole repo at once.
-- **Commit first.** A clean git tree is your undo button.
-
-## 🔁 Alternatives
-
-Prefer the terminal? **Aider** (`pip install aider-chat`; `OLLAMA_API_BASE=http://localhost:11434`, `--model ollama_chat/<tag>`) is a mature, git-native agent. **OpenCode** and **Pi** are other terminal harnesses — all hit the same `localhost:11434`. See [the harness landscape](READ_harnesses.md).
-
----
-
-## 📤 Try It
-
-Give Cline a real multi-file chore in a git repo, approve its steps, then `git log` to see what your fully-local agent did.
-
----
-
-← 🏠 [Back to the module README](README.md)
+← 🏠 [Back to the Ollama menu](README.md)

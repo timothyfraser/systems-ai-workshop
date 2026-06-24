@@ -41,15 +41,15 @@ A running theme: **treat AI output as untrusted input.** Models are assistants, 
 
 ## 🧱 Modules
 
-Work through these in order, or jump to what you need:
+Work through these in order, or jump to what you need. **The live session focuses on Setup + Claude Desktop (00–01);** modules 02–04 are **bonus, self-serve** exercises to explore on your own.
 
 | # | Module | What you'll do |
 |---|--------|----------------|
 | 00 | [Setup](00_setup/README.md) | Install Git, Claude Desktop, Cursor, and Ollama |
-| 01 | [Claude Desktop: Skills & Routines](01_claude_desktop/README.md) | Build HTML posters/flyers, reusable routines, and meet Claude Code |
-| 02 | [Red-Teaming Your Research](02_redteam/README.md) | Run an adversarial review of your own paper |
-| 03 | [Cursor](03_cursor/README.md) | When to use an IDE agent vs. a conversational analyst |
-| 04 | [**Local AI (Ollama & BYOM)**](04_local/README.md) | Run Qwen, Gemma, Phi, and Devstral on your laptop — no data center |
+| 01 | [**Claude Desktop**](01_claude_desktop/README.md) ⭐ | Interactive tutorials, posters, red-teaming, a monthly routine, sub-agents, skill suites |
+| 02 | [Red-Teaming Your Research](02_redteam/README.md) | *(bonus)* an adversarial review of your own paper |
+| 03 | [Cursor](03_cursor/README.md) | *(bonus)* IDE-integrated coding agent |
+| 04 | [Local AI (Ollama & BYOM)](04_local/README.md) | *(bonus)* run capable models on your laptop — no data center |
 
 ---
 
@@ -57,11 +57,14 @@ Work through these in order, or jump to what you need:
 
 | Tool | Best at | Where it runs |
 |------|---------|---------------|
-| **Claude Desktop** | Conversational analysis, document creation, red-teaming, Skills/routines | Anthropic cloud |
+| **Claude Desktop** | Skills, interactive tutorials, red-teaming, **sub-agents**, one-command skill suites | Anthropic cloud |
 | **Cursor** | Multi-file code context, refactoring, IDE-integrated coding | Cloud-coordinated (see [the honest note](04_local/README.md#-the-honest-truth-about-cursor-and-local-models)) |
 | **Ollama + a local agent** | Private coding & analysis with **zero data leaving your machine** | 100% local |
 
-The repo ships with a ready-to-use **[`.claude/`](.claude/)** folder (Skills for posters, routines, and research red-teaming) and a **[`.cursor/`](.cursor/)** folder (coding-style rules and a local-model coding Skill). Open the repo in either tool and they activate automatically.
+The repo ships ready-to-use config folders that activate automatically when you open it:
+
+- **[`.claude/`](.claude/)** — Skills (`interactive-toolmaker`, `html-poster`, `red-team-research`, `scholar-mentions-log`, `claude-desktop-routines`), the [`/orient`](.claude/commands/orient.md) command, and the [`column-documenter`](.claude/agents/column-documenter.md) sub-agent
+- **[`.cursor/`](.cursor/)** — coding-style + README rules and a local-model coding Skill
 
 ---
 

@@ -1,31 +1,28 @@
-# ⚖️ README `/03_cursor`
+# ⌨️ Cursor — pick one (5 min each)
 
-> Two different tools, two different jobs. **Cursor** is an IDE-integrated coding agent that sees your whole project; **Claude Desktop** is a conversational analyst that thinks problems through with you. This module is a hands-on comparison so you know which to reach for.
+> **How this block runs (~25 min):** the facilitator spends ~5 minutes demoing Cursor — multi-file context, inline edits (`Ctrl/Cmd+K`), and chat (`Ctrl/Cmd+L`). Then your group picks **ONE** card below, runs it in about 5 minutes, and we regroup.
 
----
-
-## Table of Contents
-
-- [Activities](#activities)
-- [Readings](#readings)
+> Where Claude is your *conversational analyst*, Cursor is your *IDE-integrated coding agent*. These cards show what that buys you.
 
 ---
 
-## Activities
+## 🎴 Activity menu
 
-Complete these in order:
+| Card | You'll do | The point |
+|------|-----------|-----------|
+| [🔧 Refactor in place](ACTIVITY_refactor.md) ⭐ | clean up a messy script with one inline edit | multi-file, in-editor editing |
+| [📐 Make a rule](ACTIVITY_rule.md) | teach Cursor a preference it keeps | persistent, project-wide style |
+| [📚 Add live docs](ACTIVITY_docs.md) | point Cursor at a library's real docs | accurate, current suggestions |
 
-1. [ACTIVITY: Add Documentation to Cursor](ACTIVITY_add_documentation.md)
-2. [ACTIVITY: Create Custom Cursor Rules](ACTIVITY_cursor_rules.md)
-3. [ACTIVITY: Cursor vs. Claude — A Head-to-Head](ACTIVITY_head_to_head.md)
+Each card hands you the exact steps and prompt.
 
 ---
 
-## Readings
+## 📖 Readings
 
 - [READ: Cursor vs. Claude — Which Tool, When?](READ_cursor_vs_claude.md)
 - [READ: Recommended Cursor / VS Code Extensions](READ_extensions.md)
 
 ---
 
-← 🏠 [Back to Top](#table-of-contents)
+← 🏠 [Back to the workshop README](../README.md)

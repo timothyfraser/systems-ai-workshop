@@ -98,9 +98,9 @@ cat <<'EOF'
    Try it right now (100% local):
      ollama run qwen2.5-coder:7b "Refactor this for readability: x=lambda a,b:a if a>b else b"
 
-   Wire up a local coding agent (least friction first):
-     • Start here → 04_local/ACTIVITY_continue_local.md   (Continue, in your editor)
-     • Autonomous agent → 04_local/ACTIVITY_cline_local.md (Cline; raise num_ctx!)
+   Set up your local coding agent:
+     • Cline, inside Cursor (or VS Code / Positron) → 04_local/ACTIVITY_cline_local.md
+       (point it at Ollama, and raise num_ctx!)
 
    Pick a different model for your hardware:
      • 04_local/READ_models.md

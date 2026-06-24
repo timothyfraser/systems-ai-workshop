@@ -1,34 +1,35 @@
 # 🗓️ Workshop Agenda — Systems AI-X
 
-> A suggested running order. Each block is hands-on. Times are flexible; the local-AI block is the longest because installs take a moment.
+> The live session focuses on **Claude Desktop**. Everything else is bonus, self-serve. Times are flexible.
 
 ---
 
 ## Before the day
 
-- [ ] Everyone has completed [`00_setup/`](../00_setup/README.md) — Git, Claude Desktop, Cursor, Ollama installed.
-- [ ] Everyone has run the [setup checklist](../00_setup/CHECKLIST.md).
+- [ ] Everyone has installed **Claude Desktop** (and ideally the rest of [`00_setup/`](../00_setup/README.md)).
 
 ---
 
-## Morning
+## The session (~Claude Desktop)
 
-| Time | Block | Module |
-|------|-------|--------|
-| 9:00 | Welcome + why "AI-X" | — |
-| 9:15 | Claude Desktop: Skills, routines, and HTML documents | [01](../01_claude_desktop/README.md) |
-| 10:15 | Red-teaming your research | [02](../02_redteam/README.md) |
-| 11:15 | Cursor: a comparative coding session | [03](../03_cursor/README.md) |
+| Time | Block | Link |
+|------|-------|------|
+| 0:00 | Welcome + why "AI-X" | — |
+| 0:10 | Demo: chat, **Skills**, and **Claude Code** | [01](../01_claude_desktop/README.md) |
+| 0:25 | **Round 1** — groups each pick a card, run it, regroup | [card menu](../01_claude_desktop/README.md#-activity-menu) |
+| 0:55 | **Round 2** — pick a different card, run it, regroup | [card menu](../01_claude_desktop/README.md#-activity-menu) |
+| 1:25 | Show & tell + discussion | — |
+| 1:45 | Open lab / bring your own problem | — |
 
-## Afternoon
+Each round: ~5 min build + a few minutes to compare. Cards: interactive tutorial, poster, red team, monthly routine, code cleanup, skill suite, sub-agents.
 
-| Time | Block | Module |
-|------|-------|--------|
-| 1:00 | Local AI part 1: install Ollama, pull your first model | [04](../04_local/README.md) |
-| 1:45 | Local AI part 2: quantization & picking a model for *your* laptop | [04 · Quantization](../04_local/READ_quantization.md) |
-| 2:15 | Local AI part 3: wire a local coding harness (Continue, then Cline) | [04 · Continue](../04_local/ACTIVITY_continue_local.md) |
-| 3:15 | Security & zero-trust for AI output | [04 · Security](../04_local/READ_security.md) |
-| 3:45 | Open lab / bring your own problem | — |
+---
+
+## Bonus (self-serve, any time)
+
+- [Red-Teaming Your Research](../02_redteam/README.md) — the full module
+- [Cursor](../03_cursor/README.md) — IDE-integrated coding
+- [Local AI (Ollama)](../04_local/README.md) — run capable models on your laptop, no data center
 
 ---
 

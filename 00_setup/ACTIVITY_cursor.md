@@ -1,37 +1,13 @@
-# 📌 ACTIVITY
+# 🔧 SETUP · Cursor
 
-## Install Cursor
+> ⏱️ ~10 min. An AI code editor built on VS Code — it sees your whole project, edits multiple files, and refactors in place.
 
-🕒 *Estimated Time: 10 minutes*
+1. Install from [cursor.com](https://cursor.com/) and open it. Sign in (faculty often qualify for free Pro — try your Cornell email).
+2. **File → Open Folder** → open this `systems-ai-workshop` folder. Cursor auto-loads the [`.cursor/`](../.cursor/) rules and Skills.
+3. Open the chat (`Ctrl/Cmd+L`) and say "hello" to confirm it responds.
+4. *(Optional)* helpful extensions: [`03_cursor/READ_extensions.md`](../03_cursor/READ_extensions.md).
 
----
-
-## ✅ Your Task
-
-Install **Cursor**, an AI-powered code editor built on **Visual Studio Code**. Where Claude Desktop is a great *conversational analyst*, Cursor is an *IDE-integrated coding agent*: it sees your whole project, edits multiple files, and refactors code in place.
-
-### 🧱 Stage 1: Install Cursor
-
-- [ ] Go to 🔗 [cursor.com](https://cursor.com/)
-- [ ] Download Cursor for your operating system
-- [ ] Run the installer and open **Cursor**
-- [ ] Sign in (a free account is fine; students and faculty often qualify for free Pro — check with your Cornell email)
-
-### 🧱 Stage 2: Open this repo
-
-- [ ] In Cursor, choose **File → Open Folder** and open this `systems-ai-workshop` folder
-- [ ] Cursor will detect the [`.cursor/`](../.cursor/) folder and load this repo's **rules** and **Skills** automatically
-- [ ] Open the chat panel with `Ctrl+L` (Windows) / `Cmd+L` (macOS) and say *"hello"* to confirm it responds
-
-### 🧱 Stage 3: (Optional) Recommended extensions
-
-- [ ] See [`03_cursor/READ_extensions.md`](../03_cursor/READ_extensions.md) for a short list of helpful extensions (Markdown preview, Python, R, etc.). Install only what you need.
-
----
-
-## 💡 Cursor and your data
-
-By default, Cursor sends your prompts and relevant code to its cloud to coordinate responses — even when a model "runs locally." If keeping data off the network matters to you, that's exactly what [`04_local/`](../04_local/README.md) is for: a **truly local** setup using Ollama + Continue. We'll be honest about the trade-offs there.
+> 🔒 Cursor's native AI sends prompts to its cloud even when a model "runs locally." For truly-private work, you'll run the **Cline** extension inside Cursor pointed at Ollama — that's what [`04_local/`](../04_local/README.md) is for.
 
 ---
 

@@ -1,39 +1,19 @@
-# 📌 READ
+# 📖 READ · Handy Cursor / VS Code Extensions
 
-## Recommended Cursor / VS Code Extensions
+> Cursor runs VS Code extensions. Install (`Ctrl/Cmd+Shift+X` → search → Install) only what you use — too many slow the editor down.
 
-🕒 *Estimated Time: 5 minutes*
+| Extension | Why |
+|-----------|-----|
+| **Cline** | local AI coding agent pointed at Ollama ([the privacy track](../04_local/ACTIVITY_cline_local.md)) |
+| **Python** (Microsoft) | Python support, linting, Jupyter |
+| **R** (REditorSupport) | R language support |
+| **Markdown Preview Enhanced** | rich preview with math + diagrams |
+| **Rainbow CSV** | colorize CSV columns |
+| **GitHub Pull Requests** | review PRs in-editor |
+| **LaTeX Workshop** | compile + preview LaTeX |
 
----
-
-Cursor is built on **Visual Studio Code**, so it runs the same extensions. Add a few helpful ones; avoid extension overload (too many slow the editor down).
-
-## How to install
-
-1. Open the Extensions view (`Ctrl+Shift+X` / `Cmd+Shift+X`).
-2. Search by name.
-3. Click **Install**. Some need a reload to activate.
-
-## A short, high-value list
-
-| Extension | Why | Priority |
-|-----------|-----|----------|
-| **Continue** | Local AI coding agent pointed at Ollama — the privacy track ([module 04](../04_local/ACTIVITY_continue_local.md)) | ⭐⭐⭐⭐⭐ |
-| **Python** (Microsoft) | Python language support, linting, debugging, Jupyter | ⭐⭐⭐⭐⭐ |
-| **R** (REditorSupport) | R language support and execution | ⭐⭐⭐⭐ |
-| **Markdown Preview Enhanced** | Rich Markdown preview with math and diagrams | ⭐⭐⭐⭐⭐ |
-| **Markdown Mermaid** | Render Mermaid diagrams in Markdown | ⭐⭐⭐⭐ |
-| **Rainbow CSV** | Colorize columns in CSV files | ⭐⭐⭐⭐ |
-| **Code Runner** | Run a snippet or file in many languages | ⭐⭐⭐ |
-| **GitHub Pull Requests** | Review PRs without leaving the editor | ⭐⭐⭐ |
-| **LaTeX Workshop** | Compile and preview LaTeX | ⭐⭐⭐ |
-
-## 💡 Tips
-
-- **Start with what you actually use** (Python and/or R, plus Continue).
-- **More isn't better** — each extension adds startup cost.
-- Browse more at the 🔗 [VS Code Marketplace](https://marketplace.visualstudio.com/).
+💡 Start with what you actually use (Python and/or R, plus Cline). More at the [VS Code Marketplace](https://marketplace.visualstudio.com/).
 
 ---
 
-← 🏠 [Back to the module README](README.md)
+← 🏠 [Back to the Cursor menu](README.md)
