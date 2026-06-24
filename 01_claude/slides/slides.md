@@ -17,48 +17,43 @@ style: |
     color: var(--ink);
     background: #ffffff;
     border-top: 14px solid var(--carnelian);
-    padding: 50px 60px;
+    padding: 48px 58px;
     font-size: 25px;
   }
-  h1 { color: var(--carnelian); font-size: 1.45em; margin-bottom: .25em; }
+  h1 { color: var(--carnelian); font-size: 1.4em; margin-bottom: .2em; }
   h2 { color: var(--carnelian); }
   h3 { color: var(--carnelian-dark); }
   a { color: var(--carnelian); }
   strong, b { color: var(--carnelian-dark); }
-  blockquote {
-    border-left: 6px solid var(--carnelian);
-    color: var(--muted); padding-left: 18px; margin-left: 0;
-  }
+  blockquote { border-left: 6px solid var(--carnelian); color: var(--muted); padding-left: 18px; margin-left: 0; }
   table { font-size: .82em; }
   table th { background: var(--carnelian); color: #fff; }
   section::after { color: var(--muted); font-size: .6em; }
-  .tag {
-    display: inline-block; background: var(--carnelian); color: #fff;
-    padding: 2px 14px; border-radius: 999px; font-size: .62em;
-    font-weight: 700; letter-spacing: .3px;
+  .tag, a.tag {
+    display: inline-block; background: var(--carnelian); color: #fff !important;
+    padding: 2px 14px; border-radius: 999px; font-size: .6em;
+    font-weight: 700; letter-spacing: .3px; text-decoration: none;
   }
   .small { font-size: .72em; color: var(--muted); }
-  /* two-column body for slides 6+ */
-  .cols { display: flex; gap: 26px; align-items: flex-start; font-size: 18px; }
+  /* two-column body */
+  .cols { display: flex; gap: 26px; align-items: flex-start; font-size: 17px; }
   .cols .col { flex: 1; min-width: 0; }
-  .cols p { margin: .5em 0; line-height: 1.42; }
+  .cols p { margin: .5em 0; line-height: 1.4; }
   .cols b { color: var(--carnelian-dark); }
-  .peek-label {
-    font-family: ui-monospace, Menlo, Consolas, monospace;
-    font-size: 12px; color: var(--muted); margin: 0 0 4px;
-  }
+  .peek-label { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; color: var(--muted); margin: 0 0 4px; }
+  .peek-label a { color: var(--carnelian); }
   .cols pre {
     background: #fbf3f3; border: 1px solid #ecd6d6; border-left: 4px solid var(--carnelian);
-    border-radius: 8px; padding: 10px 12px; font-size: 12.5px; line-height: 1.45;
+    border-radius: 8px; padding: 9px 12px; font-size: 12px; line-height: 1.42;
     white-space: pre; overflow: auto;
     font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; color: var(--ink);
   }
   /* exercise card grid */
-  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; margin-top: 8px; }
-  .card { border: 1px solid var(--line); border-left: 5px solid var(--carnelian); border-radius: 10px; padding: 10px 14px; }
-  .card .ct { font-weight: 700; color: var(--carnelian); font-size: 17px; }
-  .card .cd { font-size: 13.5px; color: var(--ink); margin-top: 2px; line-height: 1.35; }
-  /* carnelian title + section-divider slides */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; margin-top: 8px; }
+  .card { background: #ffffff; border: 1px solid #e8e6ea; border-left: 6px solid var(--carnelian); border-radius: 10px; padding: 12px 16px; }
+  .card .ct { font-weight: 700; color: var(--carnelian); font-size: 20px; }
+  .card .cd { font-size: 15px; color: var(--ink); margin-top: 3px; line-height: 1.35; }
+  /* carnelian title + divider slides */
   section.title, section.section { background: var(--carnelian); color: #fff; border-top: none; justify-content: center; }
   section.title :is(h1,h2,h3), section.section :is(h1,h2,h3) { color: #fff; }
   section.title a, section.section a { color: #ffd9d9; }
@@ -93,14 +88,14 @@ Built to be **helpful, honest, and harmless** — an assistant, not an oracle. �
 
 # 🧠 The Claude model family
 
-| Model | Best for | 🆓 Free / day | 💼 Pro | 🚀 Max |
-|-------|----------|---------------|--------|--------|
-| 🦉 **Opus** | hardest reasoning | a few turns (~10k tok) | ~10× free | ~40× free |
-| ⚖️ **Sonnet** | everyday work | ~30 turns (~50k tok) | ~5× free | ~20× free |
-| ⚡ **Haiku** | quick & light | ~100+ turns (~150k tok) | abundant | ~unmetered* |
+| Model | Best for | 🆓 Free | 💼 Pro | 🚀 Max |
+|-------|----------|---------|--------|--------|
+| ⚡ **Haiku** | quick & light | ~100 turns/day | ~500/day | ~2,000/day |
+| ⚖️ **Sonnet** | everyday work | ~30 turns/day | ~150/day | ~600/day |
+| 🦉 **Opus** | hardest reasoning | ~5 turns/day | ~50/day | ~200/day |
 | ✨ **Fable** | newest model line | *currently unavailable* | — | — |
 
-<span class="small">⚠️ Rough guesstimates — consumer limits are **dynamic**, reset on a rolling window, and change often. 1 "turn" ≈ a question + answer (~1–2k tokens). *Within fair use. 🔁 Tiers stay; version numbers tick up (Claude 4.x today).</span>
+<span class="small">⚠️ Rough guesstimates — consumer limits are **dynamic**, reset on a rolling window, and change often. 1 "turn" ≈ a question + answer (~1–2k tokens). Heavier models (Opus) burn your allowance faster. 🔁 Tiers stay; version numbers tick up (Claude 4.x today).</span>
 
 ---
 
@@ -132,7 +127,7 @@ All capable. Today we focus on **Claude** — here's why 👉
 <div class="col">
 <p>A <b>Skill</b> is a small saved folder of instructions that teaches Claude one job <i>well</i> — so you never re-explain it. 📁</p>
 <p>This repo ships a whole <b>library</b>. One command — <b>/orient</b> — and Claude lists everything it can do. 🗺️</p>
-<p>Today, you'll try them 👇</p>
+<p>Each <b>SKILL.md</b> = a name, a "use when", and steps.</p>
 </div>
 <div class="col">
 <p class="peek-label">the .claude/ folder</p>
@@ -144,9 +139,20 @@ All capable. Today we focus on **Claude** — here's why 👉
 │  └─ … +9 "keep on track" skills
 ├─ commands/orient.md
 └─ agents/column-documenter.md</pre>
-<p class="small">Each SKILL.md = <b>name</b> · <b>when to use</b> · <b>steps</b>.</p>
 </div>
 </div>
+
+---
+
+# 📥 Get set up *(2 min)*
+
+To use these Skills, Claude needs the repo **on your computer**:
+
+1. 📦 **Download the repo** — [github.com/timothyfraser/systems-ai-workshop](https://github.com/timothyfraser/systems-ai-workshop) → green **Code ▾** → **Download ZIP**. *(No Git needed.)*
+2. 🗂️ **Unzip it** somewhere you'll find it.
+3. 🔗 **Point Claude at the folder** — in **Claude Desktop**, add/open that folder so its `.claude/` Skills load. *(Claude Code: run `claude` inside the folder.)*
+
+> 💡 Git users can `git clone` instead — see the optional [Git & GitHub guide](https://github.com/timothyfraser/systems-ai-workshop/blob/main/00_setup/SETUP_git_github.md).
 
 ---
 
@@ -165,110 +171,153 @@ All capable. Today we focus on **Claude** — here's why 👉
 <div class="card"><div class="ct">🧭 Keep the Agent on Track</div><div class="cd">a framework to steer a complex task</div></div>
 </div>
 
-<span class="small">Build one in ~5 min · regroup & compare 🛠️💬</span>
-
 ---
 
 # 🧪 Interactive Tutorial
-<span class="tag">interactive-toolmaker</span>
+
+<a class="tag" href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/interactive-toolmaker/SKILL.md">/interactive-toolmaker</a>
 
 <div class="cols">
 <div class="col">
-<p><b>Turn a concept you teach into a tappable, phone-friendly mini-lesson</b> — a concept network you can drag, with tap-to-reveal learning checks. 📲</p>
-<p>🎯 Big-picture question → diagram → quiz, one HTML file.</p>
+<p><b>Turn a concept you teach into a tappable, phone-friendly mini-lesson.</b> 📲</p>
+<p>🎯 Big question → concept map → quiz, one HTML file.</p>
+<p>▶ <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/01_claude/output/interactive_tutorial.html"><b>see a real output</b></a></p>
 <p>💬 What would make this reusable across a course?</p>
 </div>
 <div class="col">
-<p class="peek-label">interactive-toolmaker/SKILL.md</p>
-<pre>## Required structure
-1. 🎯 Big Picture  (one question)
-2. 🗺️ The Map      (vis-network graph)
+<p class="peek-label"><a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/interactive-toolmaker/SKILL.md">interactive-toolmaker/SKILL.md</a> — excerpt</p>
+<pre>---
+name: interactive-toolmaker
+description: >-
+  Build a self-contained HTML mini-
+  tutorial that teaches one concept:
+  big-picture question, vis-network
+  concept map, tap-to-reveal checks. …
+---
+# Interactive Toolmaker
+## Required structure (always)
+1. 🎯 Big Picture (one question)
+2. 🗺️ The Map (vis-network)
 3. 🔍 Walkthrough
 4. ✅ Learning Checks (tap to reveal)
-5. 🔁 Recap</pre>
+5. 🔁 Recap
+…</pre>
 <p class="peek-label">try it</p>
-<pre>Use the interactive-toolmaker skill.
-Big question: "why do outbreaks
-spread faster in some networks?"
-7-node concept map, 3 checks.</pre>
+<pre>/interactive-toolmaker — a 1-page
+tutorial: "why do outbreaks spread
+faster in some networks?" 7-node
+concept map, 3 checks.</pre>
 </div>
 </div>
 
 ---
 
 # 🖼️ Poster
-<span class="tag">html-poster</span>
+
+<a class="tag" href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/html-poster/SKILL.md">/html-poster</a>
 
 <div class="cols">
 <div class="col">
-<p><b>Generate a clean, printable one-page flyer</b> for a talk or class — describe it, don't design it. 🎨</p>
+<p><b>Generate a clean, printable one-page flyer</b> — describe it, don't design it. 🎨</p>
 <p>🎯 One self-contained HTML file you print to PDF.</p>
+<p>▶ <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/01_claude/output/poster.html"><b>see a real output</b></a></p>
 <p>💬 Where does "describe it, don't design it" save you time?</p>
 </div>
 <div class="col">
-<p class="peek-label">html-poster/SKILL.md</p>
-<pre>## Hard requirements
-- One self-contained .html file
-- Inline CSS, print-first (US Letter)
-- System fonts, strong contrast
-- Don't overcrowd a one-pager</pre>
+<p class="peek-label"><a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/html-poster/SKILL.md">html-poster/SKILL.md</a> — excerpt</p>
+<pre>---
+name: html-poster
+description: >-
+  Generate clean, self-contained, print-
+  ready HTML documents — flyers, posters,
+  memos — with inline CSS sized for US
+  Letter or A4. …
+---
+# HTML poster / flyer / memo builder
+## Hard requirements
+1. One file (all CSS inline, no assets)
+2. Print-first (@page Letter, margins)
+3. System fonts, strong contrast
+4. Don't overcrowd a one-pager
+…</pre>
 <p class="peek-label">try it</p>
-<pre>Use html-poster: a one-page
-US-Letter flyer for a talk
-"Networks & Resilience" with a
-3-sentence abstract.</pre>
+<pre>/html-poster — a one-page US-Letter
+flyer for a talk "Networks &
+Resilience" with a 3-sentence abstract.</pre>
 </div>
 </div>
 
 ---
 
 # 🎯 Red Team a Report
-<span class="tag">red-team-research</span>
+
+<a class="tag" href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/red-team-research/SKILL.md">/red-team-research</a>
 
 <div class="cols">
 <div class="col">
-<p><b>Make Claude your harshest reviewer</b> — feed it a paper and find the objection most likely to sink it. 🥊📄</p>
+<p><b>Make Claude your harshest reviewer</b> — find the objection most likely to sink a paper. 🥊📄</p>
 <p>🎯 The strongest objection + the smallest fix, with a section reference.</p>
 <p>💬 Did it catch something you'd have missed? Where was it wrong?</p>
 </div>
 <div class="col">
-<p class="peek-label">red-team-research/SKILL.md</p>
-<pre>## Output structure
-1. Strongest objection (→ rejection)
-2. Claims audit (supported?)
-3. Methods scrutiny
-4. Prioritized fixes (smallest first)
-Cite the section for every point.</pre>
+<p class="peek-label"><a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/red-team-research/SKILL.md">red-team-research/SKILL.md</a> — excerpt</p>
+<pre>---
+name: red-team-research
+description: >-
+  Run an adversarial peer review of the
+  user's own paper — strongest objection,
+  claims audit, methods scrutiny, a
+  prioritized revision list. …
+---
+# Red-team research review
+## Output structure
+1. One-paragraph summary
+2. Strongest objection (→ rejection)
+3. Claims audit (Supported/Partial/No)
+4. Methods scrutiny
+5. Prioritized fixes (smallest first)
+…</pre>
 <p class="peek-label">try it</p>
-<pre>Use red-team-research on the
-attached report: the single
-strongest objection + 2 method
-weaknesses + the smallest fix.</pre>
+<pre>/red-team-research on the attached
+report: the single strongest objection
++ 2 method gaps + the smallest fix.</pre>
 </div>
 </div>
 
 ---
 
 # 🗞️ Monthly Routine
-<span class="tag">scholar-mentions-log</span>
+
+<a class="tag" href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/scholar-mentions-log/SKILL.md">/scholar-mentions-log</a>
 
 <div class="cols">
 <div class="col">
-<p><b>Track who's talking about you and your work</b> — search the web for recent mentions and log them with links. 🔎🗂️</p>
+<p><b>Track who's talking about you and your work</b> — search the web and log mentions with links. 🔎🗂️</p>
 <p>🎯 A spreadsheet you skim monthly; re-runs add only what's new.</p>
+<p>▶ <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/01_claude/output/mentions.csv"><b>see a sample output</b></a></p>
 <p>💬 What else would you run on a schedule?</p>
 </div>
 <div class="col">
-<p class="peek-label">scholar-mentions-log/SKILL.md</p>
-<pre>## CSV columns
+<p class="peek-label"><a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/scholar-mentions-log/SKILL.md">scholar-mentions-log/SKILL.md</a> — excerpt</p>
+<pre>---
+name: scholar-mentions-log
+description: >-
+  A monthly routine for scholars: search
+  the web for recent mentions of a named
+  researcher and append new ones to a
+  CSV (deduped). …
+---
+# Scholar mentions log
+## CSV columns
 date_logged, date_published, title,
 source, url, description
-→ 01_claude/examples/mentions.csv
-(deduped; never fabricate URLs)</pre>
+## Guardrails
+Never fabricate URLs; dedupe vs. existing.
+…</pre>
 <p class="peek-label">try it</p>
-<pre>I'm [Name], [field]. Find mentions
-of me from the last 60 days and
-append new ones to mentions.csv.</pre>
+<pre>/scholar-mentions-log — I'm [Name],
+[field]. Mentions from the last 60
+days → mentions.csv.</pre>
 </div>
 </div>
 
@@ -287,12 +336,11 @@ append new ones to mentions.csv.</pre>
 <pre># before
 def f(p):
  d=pd.read_csv(p);return d[d.v>0]
-
-# after → clear names, type hints,
-#         a docstring, + a plain-
-#         English explanation</pre>
+# after → clear names, type hints, a
+# docstring, and a plain-English
+# explanation of what it returns</pre>
 <p class="peek-label">try it</p>
-<pre>Refactor for readability, add a
+<pre>Refactor this for readability, add a
 docstring, and explain each line.</pre>
 </div>
 </div>
@@ -300,22 +348,28 @@ docstring, and explain each line.</pre>
 ---
 
 # 🧰 Skill Suite
-<span class="tag">/orient</span>
+
+<a class="tag" href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/commands/orient.md">/orient</a>
 
 <div class="cols">
 <div class="col">
-<p><b>Prime the agent on your whole skill library with one command</b> — then let it route you to the right tool. 🗺️🧰</p>
+<p><b>Prime the agent on your whole skill library with one command</b> — then let it route you. 🗺️🧰</p>
 <p>🎯 A menu of everything Claude can do here, on demand.</p>
 <p>💬 How does one command change onboarding for a 20-skill toolbox?</p>
 </div>
 <div class="col">
-<p class="peek-label">.claude/commands/orient.md</p>
-<pre>Read each SKILL.md, then show a menu:
-
-| Skill | What it makes | Use when |
-
-…then recommend the single best-fit
-skill + the exact first prompt.</pre>
+<p class="peek-label"><a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/commands/orient.md">.claude/commands/orient.md</a> — excerpt</p>
+<pre>---
+description: Orient to every skill and
+  recommend the best-fit one
+---
+Read each SKILL.md under .claude/skills/.
+For each, note its name + "use when".
+Present a compact menu table:
+| Skill | What it makes | Use it when |
+Then recommend the single best-fit skill
++ the exact first prompt to paste.
+…</pre>
 <p class="peek-label">try it (in Claude Code)</p>
 <pre>/orient</pre>
 </div>
@@ -324,30 +378,45 @@ skill + the exact first prompt.</pre>
 ---
 
 # 🧬 Sub-agents → Codebook
-<span class="tag">column-documenter</span>
+
+<a class="tag" href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/agents/column-documenter.md">column-documenter</a>
 
 <div class="cols">
 <div class="col">
-<p><b>Fan out one sub-agent per dataset column</b> to draft a data dictionary — each column gets focused, parallel attention. 🤖🤖🤖</p>
+<p><b>Fan out one sub-agent per dataset column</b> to draft a data dictionary — focused, parallel attention. 🤖🤖🤖</p>
 <p>🎯 A CODEBOOK.md whose caveats flag the messy values.</p>
+<p>▶ <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/01_claude/output/CODEBOOK.md"><b>see a real output</b></a></p>
 <p>💬 Where does one-agent-per-item beat one big pass?</p>
 </div>
 <div class="col">
-<p class="peek-label">.claude/agents/column-documenter.md</p>
-<pre>Document ONE column → an entry:
-type · units/levels · range ·
-missing convention · caveats
-(flag sentinels like 999, don't guess)</pre>
-<p class="peek-label">the shared starter data</p>
-<pre>examples/social_infra.csv  (8 cols)
-→ 1 agent per column → CODEBOOK.md</pre>
+<p class="peek-label"><a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/agents/column-documenter.md">.claude/agents/column-documenter.md</a> — excerpt</p>
+<pre>---
+name: column-documenter
+description: >-
+  Documents ONE dataset column as a
+  codebook entry (type, units, range,
+  missing convention, caveats). …
+tools: Read
+---
+You document one column. Return:
+### column_name
+- Description / Type / Units / Range
+- Missing convention / Caveats
+Flag sentinels (e.g. 999); don't invent
+values you didn't see.
+…</pre>
+<p class="peek-label">try it (in Claude Code)</p>
+<pre>For each column in social_infra.csv,
+dispatch a column-documenter subagent;
+assemble CODEBOOK.md.</pre>
 </div>
 </div>
 
 ---
 
 # 🧭 Keep the Agent on Track
-<span class="tag">the on-track suite</span>
+
+<a class="tag" href="https://github.com/timothyfraser/systems-ai-workshop/tree/main/.claude/skills">the on-track suite</a>
 
 <div class="cols">
 <div class="col">
@@ -356,16 +425,20 @@ missing convention · caveats
 <p>💬 Which framework becomes your default?</p>
 </div>
 <div class="col">
-<p class="peek-label">.claude/skills/ — the suite (9)</p>
+<p class="peek-label">.claude/skills/ — the on-track suite (9)</p>
 <pre>system-requirements   plan-then-act
 handoff-log           vertical-slice
 mermaid-map           project-memory
-design-doc
-decision-log
-definition-of-done</pre>
-<p class="peek-label">e.g. handoff-log/SKILL.md</p>
-<pre># HANDOFF.md
-Status · Tasks [ ] · Next action · Log</pre>
+design-doc   decision-log
+definition-of-done
+— excerpt: handoff-log/SKILL.md —
+# HANDOFF.md
+Goal · Status · Tasks [ ] · Next · Log
+…</pre>
+<p class="peek-label">try it</p>
+<pre>/system-requirements for [your complex
+task]: goals, user needs, functional
+requirements + acceptance, traceability.</pre>
 </div>
 </div>
 
