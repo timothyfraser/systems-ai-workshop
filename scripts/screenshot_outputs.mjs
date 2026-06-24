@@ -27,7 +27,7 @@ function findChrome() {
 
 const targets = [
   // html source                              -> png output                          width height waitNet settle fullPage
-  ['01_claude/output/interactive_tutorial.html', '01_claude/output/shots/interactive_tutorial.png', 820, 720,  true,  3000, false],
+  ['01_claude/output/interactive_tutorial.html', '01_claude/output/shots/interactive_tutorial.png', 820, 800,  false, 2500, false],
   ['01_claude/output/poster.html',               '01_claude/output/shots/poster.png',               860, 1000, false, 500,  true],
 ];
 
@@ -52,8 +52,9 @@ for (const [html, out, width, height, waitNet, settle, fullPage] of targets) {
   await page.goto(url, { waitUntil: waitNet ? 'networkidle' : 'load', timeout: 60000 })
     .catch(e => console.error('  goto warning:', e.message));
   await page.waitForTimeout(settle);
+  const canvases = await page.evaluate(() => document.querySelectorAll('canvas').length);
   await page.screenshot({ path: path.join(repo, out), fullPage });
-  console.log('✅ shot →', out);
+  console.log('✅ shot →', out, `(canvas elements: ${canvases})`);
   await ctx.close();
 }
 
