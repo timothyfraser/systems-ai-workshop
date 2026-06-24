@@ -1,40 +1,39 @@
-# 🔧 README `/00_setup`
+# 🚀 Quick Start — One Thing to Do
 
-> Install everything **before** the workshop so we can spend the day building, not downloading. Four tools, about 45 minutes, mostly waiting on installers.
-
----
-
-## Table of Contents
-
-- [Activities](#activities)
-- [Checklist](#checklist)
+> Before the workshop, do **one** thing: **install Claude Desktop.** That's the whole requirement. Everything else is optional.
 
 ---
 
-## Activities
+## ✅ Required — Install Claude Desktop  *(~5 min)*
 
-Complete these in order:
+1. Download it: **[claude.ai/download](https://claude.ai/download)** (macOS or Windows).
+2. Install, open it, and **sign in**.
+   - *Cornell note:* if your department has a Claude for Work / Team plan, sign in with your Cornell email so usage is covered. Otherwise a free or Pro account is fine.
 
-1. [ACTIVITY: Install Git and a Terminal](ACTIVITY_git.md)
-2. [ACTIVITY: Install Claude Desktop](ACTIVITY_claude_desktop.md)
-3. [ACTIVITY: Install Cursor](ACTIVITY_cursor.md)
-4. [ACTIVITY: Install Ollama](ACTIVITY_ollama.md) — the local-AI engine; we go deep on it in [`04_local/`](../04_local/README.md)
-
----
-
-## Checklist
-
-Tear-off version for the impatient: [`CHECKLIST.md`](CHECKLIST.md).
-
-You're done when all four of these print something sensible in your terminal:
-
-```bash
-git --version
-ollama --version
-```
-
-...and **Claude Desktop** and **Cursor** both open to a window.
+You're ready. 🎉
 
 ---
 
-← 🏠 [Back to Top](#table-of-contents)
+## ⭐ Optional but appreciated — Install Git  *(~5 min)*
+
+If you have a few spare minutes, installing **Git** ahead of time helps us move faster on the day (it's the one thing that's fiddly to do live).
+
+1. Download: **[git-scm.com/downloads](https://git-scm.com/downloads)** → install with the defaults. *(On Windows this also gives you **Git Bash**, a terminal.)*
+2. *(Optional)* make a free **[GitHub account](https://github.com/signup)**.
+3. Check it worked — open a terminal and run:
+   ```bash
+   git --version
+   ```
+
+---
+
+## 🧰 Going further (self-serve, totally optional)
+
+Curious about the bonus tools? Their install guides live with their modules:
+
+- **Install Cursor** → [`03_cursor/SETUP_cursor.md`](../03_cursor/SETUP_cursor.md)
+- **Install Ollama** (local AI) → [`04_local/SETUP_ollama.md`](../04_local/SETUP_ollama.md)
+
+---
+
+← 🏠 [Back to the workshop README](../README.md)

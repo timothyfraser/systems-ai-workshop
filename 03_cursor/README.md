@@ -2,7 +2,7 @@
 
 > **How this block runs (~25 min):** the facilitator spends ~5 minutes demoing Cursor — multi-file context, inline edits (`Ctrl/Cmd+K`), and chat (`Ctrl/Cmd+L`). Then your group picks **ONE** card below, runs it in about 5 minutes, and we regroup.
 
-> Where Claude is your *conversational analyst*, Cursor is your *IDE-integrated coding agent*. These cards show what that buys you.
+> Where Claude is your *conversational analyst*, Cursor is your *IDE-integrated coding agent*. These cards show what that buys you. **Don't have Cursor yet?** → [SETUP: Install Cursor](SETUP_cursor.md).
 
 ---
 
