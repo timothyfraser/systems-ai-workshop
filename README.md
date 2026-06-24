@@ -1,6 +1,6 @@
 # 🛠️ Systems AI-X Workshop
 
-> A hands-on workshop for **Systems Engineering faculty at Cornell** on using AI to do real academic work: write and design documents, pressure-test your research, code faster, and — when you'd rather not send your data to a data center — run capable AI models **entirely on your own laptop**.
+> A hands-on workshop for **Systems Engineering faculty at Cornell** on using AI to do real academic work: write and design documents, pressure-test your research, code faster, and turn ideas into **polished documents and visuals — with no code**.
 
 *Maintained by Prof. Tim Fraser, Cornell Systems Engineering. **AI-X** = advancing AI in engineering research + teaching.*
 
@@ -26,7 +26,7 @@
 
 ## 🎯 What You'll Learn
 
-This workshop is about **high-leverage, practical** AI workflows for faculty — automating administrative work, raising research rigor, and speeding up coding — with a strong thread on **privacy and local control**.
+This workshop is about **high-leverage, practical** AI workflows for faculty — automating administrative work, raising research rigor, speeding up coding, and building polished documents and visuals with no code.
 
 A running theme: **treat AI output as untrusted input.** Models are assistants, not authorities. We code and write *with* them, and we verify everything — a habit worth modeling for the students you teach, many headed into regulated sectors like the DoD.
 
