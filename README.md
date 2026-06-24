@@ -18,16 +18,9 @@
 
 ## 🚨 Before You Arrive
 
-Please install four things **before** the workshop. The full, click-by-click instructions live in [`00_setup/`](00_setup/README.md):
+**One thing:** install **Claude Desktop** → **[claude.ai/download](https://claude.ai/download)**. Sign in and you're ready — that's the only requirement.
 
-1. **Git** — version control + a Unix-like terminal
-2. **Claude Desktop** — Anthropic's desktop app (Skills, routines, Claude Code)
-3. **Cursor** — an AI-powered code editor (free for students/faculty)
-4. **Ollama** — runs AI models locally on your machine
-
-👉 Start here: **[`00_setup/README.md`](00_setup/README.md)** — about 45 minutes, mostly downloads.
-
-If you only do one thing, do the [setup checklist](00_setup/CHECKLIST.md).
+*Optional but appreciated:* if you have a few minutes, also install **Git** — it saves us time on the day. Both steps are in the [quick start](00_setup/README.md) (≈5 minutes).
 
 ---
 
@@ -45,7 +38,7 @@ Work through these in order, or jump to what you need. **The live session focuse
 
 | # | Module | What you'll do |
 |---|--------|----------------|
-| 00 | [Setup](00_setup/README.md) | Install Git, Claude Desktop, Cursor, and Ollama |
+| 00 | [Quick Start](00_setup/README.md) | Install **Claude Desktop** (the only requirement; Git optional) |
 | 01 | [**Claude Desktop**](01_claude_desktop/README.md) ⭐ | Interactive tutorials, posters, red-teaming, a monthly routine, sub-agents, skill suites |
 | 02 | [Red-Teaming Your Research](02_redteam/README.md) | *(bonus)* an adversarial review of your own paper |
 | 03 | [Cursor](03_cursor/README.md) | *(bonus)* IDE-integrated coding agent |
@@ -73,7 +66,7 @@ The repo ships ready-to-use config folders that activate automatically when you 
 ```
 systems-ai-workshop/
 ├── README.md
-├── 00_setup/                 # install everything before you arrive
+├── 00_setup/                 # quick start — the one required install (Claude Desktop)
 ├── 01_claude_desktop/        # ⭐ the main event — activity cards
 ├── 02_redteam/               # (bonus) adversarial review of your own work
 ├── 03_cursor/                # (bonus) IDE-integrated coding agent

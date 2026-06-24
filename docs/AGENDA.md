@@ -6,7 +6,7 @@
 
 ## Before the day
 
-- [ ] Everyone has installed **Claude Desktop** (and ideally the rest of [`00_setup/`](../00_setup/README.md)).
+- [ ] Everyone has installed **Claude Desktop** — the one requirement (Git optional). See the [quick start](../00_setup/README.md).
 
 ---
 

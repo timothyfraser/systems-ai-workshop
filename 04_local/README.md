@@ -2,7 +2,7 @@
 
 > Run capable AI **entirely on your own laptop** — no data center, no cloud, nothing leaving your machine. The answer to *"I love this, but I can't send my data anywhere."*
 
-> **How this block runs (~25 min):** the facilitator spends ~5 minutes demoing Ollama (pull a model, run it, the privacy idea). Then your group picks **ONE** card below and runs it. *Assumes Ollama is installed from [`00_setup`](../00_setup/README.md) — installs are pre-work, not a 5-minute activity.*
+> **How this block runs (~25 min):** the facilitator spends ~5 minutes demoing Ollama (pull a model, run it, the privacy idea). Then your group picks **ONE** card below and runs it. *Assumes Ollama is installed — see [SETUP_ollama.md](SETUP_ollama.md).*
 
 ---
 
@@ -21,7 +21,7 @@
 - [READ: Quantization, Explained for Laptops](READ_quantization.md)
 - [READ: The Ollama Harness Landscape (2026)](READ_harnesses.md)
 - [READ: Security & Zero-Trust for AI Output](READ_security.md)
-- Setup references: [Install Ollama](../00_setup/ACTIVITY_ollama.md) · [Set up Cline (the local agent)](ACTIVITY_cline_local.md)
+- Setup references: [Install Ollama](SETUP_ollama.md) · [Set up Cline (the local agent)](ACTIVITY_cline_local.md)
 - One-command setup: [`scripts/setup_local_ai.sh`](scripts/setup_local_ai.sh)
 
 ---
