@@ -63,7 +63,7 @@ Work through these in order, or jump to what you need. **The live session focuse
 
 The repo ships ready-to-use config folders that activate automatically when you open it:
 
-- **[`.claude/`](.claude/)** — Skills (`interactive-toolmaker`, `html-poster`, `red-team-research`, `scholar-mentions-log`, `claude-desktop-routines`), the [`/orient`](.claude/commands/orient.md) command, and the [`column-documenter`](.claude/agents/column-documenter.md) sub-agent
+- **[`.claude/`](.claude/)** — Skills (`interactive-toolmaker`, `html-poster`, `red-team-research`, `scholar-mentions-log`, `claude-desktop-routines`) plus a 6-skill **"keep on track"** suite (`system-requirements`, `handoff-log`, `mermaid-map`, `design-doc`, `decision-log`, `definition-of-done`), the [`/orient`](.claude/commands/orient.md) command, and the [`column-documenter`](.claude/agents/column-documenter.md) sub-agent
 - **[`.cursor/`](.cursor/)** — coding-style + README rules and a local-model coding Skill
 
 ---
