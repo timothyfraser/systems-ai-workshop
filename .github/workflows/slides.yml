@@ -1,0 +1,70 @@
+name: Deploy Slides
+
+# Builds every <folder>/slides/slides.md deck with Marp and publishes to GitHub Pages.
+# One-time: repo Settings → Pages → Source: "GitHub Actions".
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/slides/**"
+      - ".github/workflows/slides.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build decks with Marp
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          mkdir -p _site
+
+          # Landing page
+          {
+            echo '<!doctype html><meta charset="utf-8">'
+            echo '<title>Systems AI-X — Slides</title>'
+            echo '<style>body{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;max-width:680px;margin:48px auto;padding:0 16px;color:#1a1a2e}h1{color:#b31b1b}a{color:#b31b1b;text-decoration:none}a:hover{text-decoration:underline}li{margin:.5em 0;font-size:1.1em}</style>'
+            echo '<h1>🛠️ Systems AI-X — Slides</h1><ul>'
+          } > _site/index.html
+
+          for f in */slides/slides.md; do
+            mod="$(dirname "$(dirname "$f")")"
+            out="${mod}.html"
+            echo "Rendering $f → _site/${out}"
+            npx -y @marp-team/marp-cli@latest "$f" -o "_site/${out}" --html
+            echo "<li>🎞️ <a href=\"${out}\">${mod}</a></li>" >> _site/index.html
+          done
+
+          echo '</ul>' >> _site/index.html
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

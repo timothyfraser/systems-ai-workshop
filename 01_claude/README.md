@@ -4,6 +4,8 @@
 
 > **How this block runs:** the facilitator spends ~5 minutes demoing Claude Desktop — chat, **Skills**, and **Claude Code**. Then your group picks **ONE** card below, runs it in about 5 minutes, and we regroup to compare. Repeat with another card if there's time.
 
+> 🎞️ **Presenting?** The slide deck lives in [`slides/`](slides/slides.md) (Marp markdown, Cornell-red theme) and auto-deploys to GitHub Pages.
+
 ---
 
 ## 🎴 Activity menu

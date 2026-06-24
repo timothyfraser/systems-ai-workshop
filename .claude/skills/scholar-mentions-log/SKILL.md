@@ -18,7 +18,7 @@ Keep a running CSV of who is mentioning a scholar and their work — news, blogs
 
 - **Who:** full name, common variants/initials, and **affiliation or field** (to disambiguate from other people with the same name).
 - **Window:** how far back to look (default: the **last 60 days**).
-- **CSV path:** default `01_claude_desktop/examples/mentions.csv`.
+- **CSV path:** default `01_claude/examples/mentions.csv`.
 
 ## Steps
 

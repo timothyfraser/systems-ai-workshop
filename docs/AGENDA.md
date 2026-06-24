@@ -15,9 +15,9 @@
 | Time | Block | Link |
 |------|-------|------|
 | 0:00 | Welcome + why "AI-X" | — |
-| 0:10 | Demo: chat, **Skills**, and **Claude Code** | [01](../01_claude_desktop/README.md) |
-| 0:25 | **Round 1** — groups each pick a card, run it, regroup | [card menu](../01_claude_desktop/README.md#-activity-menu) |
-| 0:55 | **Round 2** — pick a different card, run it, regroup | [card menu](../01_claude_desktop/README.md#-activity-menu) |
+| 0:10 | Demo: chat, **Skills**, and **Claude Code** | [01](../01_claude/README.md) |
+| 0:25 | **Round 1** — groups each pick a card, run it, regroup | [card menu](../01_claude/README.md#-activity-menu) |
+| 0:55 | **Round 2** — pick a different card, run it, regroup | [card menu](../01_claude/README.md#-activity-menu) |
 | 1:25 | Show & tell + discussion | — |
 | 1:45 | Open lab / bring your own problem | — |
 
