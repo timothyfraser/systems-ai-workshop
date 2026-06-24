@@ -185,23 +185,8 @@ To use these Skills, Claude needs the repo **on your computer**:
 <p>💬 What would make this reusable across a course?</p>
 </div>
 <div class="col">
-<p class="peek-label"><a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/interactive-toolmaker/SKILL.md">interactive-toolmaker/SKILL.md</a> — excerpt</p>
-<pre>---
-name: interactive-toolmaker
-description: >-
-  Build a self-contained HTML mini-
-  tutorial that teaches one concept:
-  big-picture question, vis-network
-  concept map, tap-to-reveal checks. …
----
-# Interactive Toolmaker
-## Required structure (always)
-1. 🎯 Big Picture (one question)
-2. 🗺️ The Map (vis-network)
-3. 🔍 Walkthrough
-4. ✅ Learning Checks (tap to reveal)
-5. 🔁 Recap
-…</pre>
+<img src="https://raw.githubusercontent.com/timothyfraser/systems-ai-workshop/main/01_claude/output/shots/interactive_tutorial.png" alt="Screenshot of the interactive tutorial output" style="width:100%;border:1px solid #e8e6ea;border-radius:8px;">
+<p class="peek-label">↑ a real result · <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/interactive-toolmaker/SKILL.md">view the skill ↗</a></p>
 <p class="peek-label">try it</p>
 <pre>/interactive-toolmaker — a 1-page
 tutorial: "why do outbreaks spread
@@ -224,22 +209,8 @@ concept map, 3 checks.</pre>
 <p>💬 Where does "describe it, don't design it" save you time?</p>
 </div>
 <div class="col">
-<p class="peek-label"><a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/html-poster/SKILL.md">html-poster/SKILL.md</a> — excerpt</p>
-<pre>---
-name: html-poster
-description: >-
-  Generate clean, self-contained, print-
-  ready HTML documents — flyers, posters,
-  memos — with inline CSS sized for US
-  Letter or A4. …
----
-# HTML poster / flyer / memo builder
-## Hard requirements
-1. One file (all CSS inline, no assets)
-2. Print-first (@page Letter, margins)
-3. System fonts, strong contrast
-4. Don't overcrowd a one-pager
-…</pre>
+<img src="https://raw.githubusercontent.com/timothyfraser/systems-ai-workshop/main/01_claude/output/shots/poster.png" alt="Screenshot of the poster output" style="width:100%;border:1px solid #e8e6ea;border-radius:8px;">
+<p class="peek-label">↑ a real result · <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/html-poster/SKILL.md">view the skill ↗</a></p>
 <p class="peek-label">try it</p>
 <pre>/html-poster — a one-page US-Letter
 flyer for a talk "Networks &
