@@ -25,3 +25,6 @@ venv/
 # Local model junk / scratch
 *.gguf
 scratch/
+
+# Node (screenshot tooling — not committed)
+node_modules/
