@@ -2,7 +2,7 @@
 //
 // Reusable system — regenerate any time with:
 //   npm i playwright-core   # (a headless chromium must be installed; this env has one at /opt/pw-browsers)
-//   node scripts/screenshot_outputs.mjs
+//   node .github/scripts/screenshot_outputs.mjs
 //
 // Add a new target below to capture another HTML file. PNGs land in 01_claude/output/shots/.
 
@@ -11,7 +11,7 @@ import { fileURLToPath } from 'url';
 import fs from 'fs';
 import path from 'path';
 
-const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 
 function findChrome() {
   if (process.env.PW_CHROME) return process.env.PW_CHROME;
@@ -29,6 +29,12 @@ const targets = [
   // html source                              -> png output                          width height waitNet settle fullPage
   ['01_claude/output/interactive_tutorial.html', '01_claude/output/shots/interactive_tutorial.png', 820, 800,  false, 2500, false],
   ['01_claude/output/poster.html',               '01_claude/output/shots/poster.png',               860, 1000, false, 500,  true],
+  ['01_claude/output/redteam.html',              '01_claude/output/shots/redteam.png',              810, 600,  false, 400,  true],
+  ['01_claude/output/orient.html',               '01_claude/output/shots/orient.png',               810, 600,  false, 400,  true],
+  ['01_claude/output/cleanup.html',              '01_claude/output/shots/cleanup.png',              810, 600,  false, 400,  true],
+  ['01_claude/output/mentions_table.html',       '01_claude/output/shots/mentions.png',             840, 600,  false, 400,  true],
+  ['01_claude/output/codebook.html',             '01_claude/output/shots/codebook.png',             810, 600,  false, 400,  true],
+  ['01_claude/output/ontrack.html',              '01_claude/output/shots/ontrack.png',              810, 600,  false, 400,  true],
 ];
 
 fs.mkdirSync(path.join(repo, '01_claude/output/shots'), { recursive: true });

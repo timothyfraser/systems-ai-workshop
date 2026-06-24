@@ -40,7 +40,7 @@ style: |
   .cols .col { flex: 1; min-width: 0; }
   .cols p { margin: .5em 0; line-height: 1.4; }
   .cols b { color: var(--carnelian-dark); }
-  .peek-label { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; color: var(--muted); margin: 0 0 4px; }
+  .peek-label { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; color: var(--muted); margin: 6px 0 4px; }
   .peek-label a { color: var(--carnelian); }
   .cols pre {
     background: #fbf3f3; border: 1px solid #ecd6d6; border-left: 4px solid var(--carnelian);
@@ -48,6 +48,7 @@ style: |
     white-space: pre; overflow: auto;
     font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; color: var(--ink);
   }
+  .shot { width: 100%; max-height: 440px; object-fit: cover; object-position: top; border: 1px solid var(--line); border-radius: 8px; }
   /* exercise card grid */
   .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; margin-top: 8px; }
   .card { background: #ffffff; border: 1px solid #e8e6ea; border-left: 6px solid var(--carnelian); border-radius: 10px; padding: 12px 16px; }
@@ -181,17 +182,16 @@ To use these Skills, Claude needs the repo **on your computer**:
 <div class="col">
 <p><b>Turn a concept you teach into a tappable, phone-friendly mini-lesson.</b> 📲</p>
 <p>🎯 Big question → concept map → quiz, one HTML file.</p>
-<p>▶ <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/01_claude/output/interactive_tutorial.html"><b>see a real output</b></a></p>
-<p>💬 What would make this reusable across a course?</p>
-</div>
-<div class="col">
-<img src="https://raw.githubusercontent.com/timothyfraser/systems-ai-workshop/main/01_claude/output/shots/interactive_tutorial.png" alt="Screenshot of the interactive tutorial output" style="width:100%;border:1px solid #e8e6ea;border-radius:8px;">
-<p class="peek-label">↑ a real result · <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/interactive-toolmaker/SKILL.md">view the skill ↗</a></p>
 <p class="peek-label">try it</p>
 <pre>/interactive-toolmaker — a 1-page
 tutorial: "why do outbreaks spread
-faster in some networks?" 7-node
-concept map, 3 checks.</pre>
+faster in some networks?" 7 nodes,
+3 checks.</pre>
+<p>💬 Reusable across a whole course?</p>
+</div>
+<div class="col">
+<img class="shot" src="https://raw.githubusercontent.com/timothyfraser/systems-ai-workshop/main/01_claude/output/shots/interactive_tutorial.png" alt="Interactive tutorial output">
+<p class="peek-label">↑ real result · <a href="https://timothyfraser.github.io/systems-ai-workshop/01_claude/output/interactive_tutorial.html">open ↗</a> · <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/interactive-toolmaker/SKILL.md">skill ↗</a></p>
 </div>
 </div>
 
@@ -205,16 +205,15 @@ concept map, 3 checks.</pre>
 <div class="col">
 <p><b>Generate a clean, printable one-page flyer</b> — describe it, don't design it. 🎨</p>
 <p>🎯 One self-contained HTML file you print to PDF.</p>
-<p>▶ <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/01_claude/output/poster.html"><b>see a real output</b></a></p>
-<p>💬 Where does "describe it, don't design it" save you time?</p>
-</div>
-<div class="col">
-<img src="https://raw.githubusercontent.com/timothyfraser/systems-ai-workshop/main/01_claude/output/shots/poster.png" alt="Screenshot of the poster output" style="width:100%;border:1px solid #e8e6ea;border-radius:8px;">
-<p class="peek-label">↑ a real result · <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/html-poster/SKILL.md">view the skill ↗</a></p>
 <p class="peek-label">try it</p>
 <pre>/html-poster — a one-page US-Letter
 flyer for a talk "Networks &
 Resilience" with a 3-sentence abstract.</pre>
+<p>💬 Where does "describe it, don't design it" save you time?</p>
+</div>
+<div class="col">
+<img class="shot" src="https://raw.githubusercontent.com/timothyfraser/systems-ai-workshop/main/01_claude/output/shots/poster.png" alt="Poster output">
+<p class="peek-label">↑ real result · <a href="https://timothyfraser.github.io/systems-ai-workshop/01_claude/output/poster.html">open ↗</a> · <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/html-poster/SKILL.md">skill ↗</a></p>
 </div>
 </div>
 
@@ -228,30 +227,15 @@ Resilience" with a 3-sentence abstract.</pre>
 <div class="col">
 <p><b>Make Claude your harshest reviewer</b> — find the objection most likely to sink a paper. 🥊📄</p>
 <p>🎯 The strongest objection + the smallest fix, with a section reference.</p>
-<p>💬 Did it catch something you'd have missed? Where was it wrong?</p>
-</div>
-<div class="col">
-<p class="peek-label"><a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/red-team-research/SKILL.md">red-team-research/SKILL.md</a> — excerpt</p>
-<pre>---
-name: red-team-research
-description: >-
-  Run an adversarial peer review of the
-  user's own paper — strongest objection,
-  claims audit, methods scrutiny, a
-  prioritized revision list. …
----
-# Red-team research review
-## Output structure
-1. One-paragraph summary
-2. Strongest objection (→ rejection)
-3. Claims audit (Supported/Partial/No)
-4. Methods scrutiny
-5. Prioritized fixes (smallest first)
-…</pre>
 <p class="peek-label">try it</p>
 <pre>/red-team-research on the attached
-report: the single strongest objection
-+ 2 method gaps + the smallest fix.</pre>
+report: strongest objection + 2
+method gaps + the smallest fix.</pre>
+<p>💬 Where was it wrong, and how did you know?</p>
+</div>
+<div class="col">
+<img class="shot" src="https://raw.githubusercontent.com/timothyfraser/systems-ai-workshop/main/01_claude/output/shots/redteam.png" alt="Red team critique output">
+<p class="peek-label">↑ real result · <a href="https://timothyfraser.github.io/systems-ai-workshop/01_claude/output/redteam.html">open ↗</a> · <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/red-team-research/SKILL.md">skill ↗</a></p>
 </div>
 </div>
 
@@ -265,30 +249,15 @@ report: the single strongest objection
 <div class="col">
 <p><b>Track who's talking about you and your work</b> — search the web and log mentions with links. 🔎🗂️</p>
 <p>🎯 A spreadsheet you skim monthly; re-runs add only what's new.</p>
-<p>▶ <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/01_claude/output/mentions.csv"><b>see a sample output</b></a></p>
-<p>💬 What else would you run on a schedule?</p>
-</div>
-<div class="col">
-<p class="peek-label"><a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/scholar-mentions-log/SKILL.md">scholar-mentions-log/SKILL.md</a> — excerpt</p>
-<pre>---
-name: scholar-mentions-log
-description: >-
-  A monthly routine for scholars: search
-  the web for recent mentions of a named
-  researcher and append new ones to a
-  CSV (deduped). …
----
-# Scholar mentions log
-## CSV columns
-date_logged, date_published, title,
-source, url, description
-## Guardrails
-Never fabricate URLs; dedupe vs. existing.
-…</pre>
 <p class="peek-label">try it</p>
 <pre>/scholar-mentions-log — I'm [Name],
 [field]. Mentions from the last 60
 days → mentions.csv.</pre>
+<p>💬 What else would you run on a schedule?</p>
+</div>
+<div class="col">
+<img class="shot" src="https://raw.githubusercontent.com/timothyfraser/systems-ai-workshop/main/01_claude/output/shots/mentions.png" alt="Mentions log output">
+<p class="peek-label">↑ real result · <a href="https://timothyfraser.github.io/systems-ai-workshop/01_claude/output/mentions_table.html">open ↗</a> · <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/skills/scholar-mentions-log/SKILL.md">skill ↗</a></p>
 </div>
 </div>
 
@@ -296,23 +265,20 @@ days → mentions.csv.</pre>
 
 # 🧹 Clean Up & Explain Code
 
+<span class="tag">no skill — just ask</span>
+
 <div class="cols">
 <div class="col">
 <p><b>Hand Claude a messy snippet</b> and get back clean code you actually understand — it rewrites <i>and</i> explains. 🧼💡</p>
 <p>🎯 Cleaner code + a one-sentence explanation.</p>
-<p>💬 When do you want Claude to <i>explain</i> vs. an IDE agent to <i>edit in place</i>?</p>
-</div>
-<div class="col">
-<p class="peek-label">no skill needed — just ask</p>
-<pre># before
-def f(p):
- d=pd.read_csv(p);return d[d.v>0]
-# after → clear names, type hints, a
-# docstring, and a plain-English
-# explanation of what it returns</pre>
 <p class="peek-label">try it</p>
 <pre>Refactor this for readability, add a
 docstring, and explain each line.</pre>
+<p>💬 When do you want Claude to <i>explain</i> vs. an IDE agent to <i>edit in place</i>?</p>
+</div>
+<div class="col">
+<img class="shot" src="https://raw.githubusercontent.com/timothyfraser/systems-ai-workshop/main/01_claude/output/shots/cleanup.png" alt="Code cleanup output">
+<p class="peek-label">↑ real result · <a href="https://timothyfraser.github.io/systems-ai-workshop/01_claude/output/cleanup.html">open ↗</a></p>
 </div>
 </div>
 
@@ -326,23 +292,13 @@ docstring, and explain each line.</pre>
 <div class="col">
 <p><b>Prime the agent on your whole skill library with one command</b> — then let it route you. 🗺️🧰</p>
 <p>🎯 A menu of everything Claude can do here, on demand.</p>
+<p class="peek-label">try it (in Claude Code)</p>
+<pre>/orient</pre>
 <p>💬 How does one command change onboarding for a 20-skill toolbox?</p>
 </div>
 <div class="col">
-<p class="peek-label"><a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/commands/orient.md">.claude/commands/orient.md</a> — excerpt</p>
-<pre>---
-description: Orient to every skill and
-  recommend the best-fit one
----
-Read each SKILL.md under .claude/skills/.
-For each, note its name + "use when".
-Present a compact menu table:
-| Skill | What it makes | Use it when |
-Then recommend the single best-fit skill
-+ the exact first prompt to paste.
-…</pre>
-<p class="peek-label">try it (in Claude Code)</p>
-<pre>/orient</pre>
+<img class="shot" src="https://raw.githubusercontent.com/timothyfraser/systems-ai-workshop/main/01_claude/output/shots/orient.png" alt="/orient menu output">
+<p class="peek-label">↑ real result · <a href="https://timothyfraser.github.io/systems-ai-workshop/01_claude/output/orient.html">open ↗</a> · <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/commands/orient.md">command ↗</a></p>
 </div>
 </div>
 
@@ -356,30 +312,15 @@ Then recommend the single best-fit skill
 <div class="col">
 <p><b>Fan out one sub-agent per dataset column</b> to draft a data dictionary — focused, parallel attention. 🤖🤖🤖</p>
 <p>🎯 A CODEBOOK.md whose caveats flag the messy values.</p>
-<p>▶ <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/01_claude/output/CODEBOOK.md"><b>see a real output</b></a></p>
-<p>💬 Where does one-agent-per-item beat one big pass?</p>
-</div>
-<div class="col">
-<p class="peek-label"><a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/agents/column-documenter.md">.claude/agents/column-documenter.md</a> — excerpt</p>
-<pre>---
-name: column-documenter
-description: >-
-  Documents ONE dataset column as a
-  codebook entry (type, units, range,
-  missing convention, caveats). …
-tools: Read
----
-You document one column. Return:
-### column_name
-- Description / Type / Units / Range
-- Missing convention / Caveats
-Flag sentinels (e.g. 999); don't invent
-values you didn't see.
-…</pre>
 <p class="peek-label">try it (in Claude Code)</p>
 <pre>For each column in social_infra.csv,
 dispatch a column-documenter subagent;
 assemble CODEBOOK.md.</pre>
+<p>💬 Where does one-agent-per-item beat one big pass?</p>
+</div>
+<div class="col">
+<img class="shot" src="https://raw.githubusercontent.com/timothyfraser/systems-ai-workshop/main/01_claude/output/shots/codebook.png" alt="Codebook output">
+<p class="peek-label">↑ real result · <a href="https://timothyfraser.github.io/systems-ai-workshop/01_claude/output/codebook.html">open ↗</a> · <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/.claude/agents/column-documenter.md">agent ↗</a></p>
 </div>
 </div>
 
@@ -393,23 +334,15 @@ assemble CODEBOOK.md.</pre>
 <div class="col">
 <p><b>Pick a framework to steer a genuinely complex task.</b> 🧱🗺️✅</p>
 <p>🎯 An artifact you could hand an agent to execute against.</p>
-<p>💬 Which framework becomes your default?</p>
-</div>
-<div class="col">
-<p class="peek-label">.claude/skills/ — the on-track suite (9)</p>
-<pre>system-requirements   plan-then-act
-handoff-log           vertical-slice
-mermaid-map           project-memory
-design-doc   decision-log
-definition-of-done
-— excerpt: handoff-log/SKILL.md —
-# HANDOFF.md
-Goal · Status · Tasks [ ] · Next · Log
-…</pre>
 <p class="peek-label">try it</p>
 <pre>/system-requirements for [your complex
 task]: goals, user needs, functional
 requirements + acceptance, traceability.</pre>
+<p>💬 Which framework becomes your default?</p>
+</div>
+<div class="col">
+<img class="shot" src="https://raw.githubusercontent.com/timothyfraser/systems-ai-workshop/main/01_claude/output/shots/ontrack.png" alt="Requirements doc output">
+<p class="peek-label">↑ real result · <a href="https://timothyfraser.github.io/systems-ai-workshop/01_claude/output/ontrack.html">open ↗</a> · <a href="https://github.com/timothyfraser/systems-ai-workshop/tree/main/.claude/skills">suite ↗</a></p>
 </div>
 </div>
 
