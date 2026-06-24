@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why do outbreaks spread faster in some networks?</title>
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<style>
+  :root{--bg:#fff;--ink:#1a1a2e;--muted:#5a6472;--line:#e8e6ea;--accent:#b31b1b;--accent-soft:#f7ebeb;--ok:#1c7c54;}
+  *{box-sizing:border-box} body{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);line-height:1.55;margin:0;background:var(--bg)}
+  .wrap{max-width:760px;margin:0 auto;padding:24px}
+  h1{color:var(--accent);font-size:26px;line-height:1.25}
+  h2{color:var(--accent);border-bottom:2px solid var(--line);padding-bottom:4px;margin-top:32px}
+  .hero{background:var(--accent-soft);border-left:5px solid var(--accent);padding:16px 18px;border-radius:8px;font-size:18px}
+  #net{height:420px;border:1px solid var(--line);border-radius:10px}
+  details{border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:8px 0}
+  details summary{cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:center}
+  details.answer[open]{border-color:var(--ok)} details.answer summary{color:var(--ok)}
+  .muted{color:var(--muted)}
+</style></head>
+<body><div class="wrap">
+  <h1>Why do outbreaks spread faster in some networks than others?</h1>
+
+  <h2>🎯 Big Picture</h2>
+  <p class="hero">Two communities can face the same germ and see very different outbreaks. The difference is often not the germ — it's the <b>shape of the contact network</b>: who is connected to whom.</p>
+
+  <h2>🗺️ The Map</h2>
+  <div id="net"></div>
+  <script>
+    const nodes = new vis.DataSet([
+      {id:1,label:"Node\n(a person)",color:"#b31b1b",font:{color:"#fff"}},
+      {id:2,label:"Edge\n(a contact)",color:"#264653",font:{color:"#fff"}},
+      {id:3,label:"Degree",color:"#264653",font:{color:"#fff"}},
+      {id:4,label:"Hub",color:"#b31b1b",font:{color:"#fff"}},
+      {id:5,label:"Path length",color:"#264653",font:{color:"#fff"}},
+      {id:6,label:"Clustering",color:"#264653",font:{color:"#fff"}},
+      {id:7,label:"Super-\nspreader",color:"#b31b1b",font:{color:"#fff"}}
+    ]);
+    const edges = new vis.DataSet([
+      {from:1,to:2},{from:2,to:3},{from:3,to:4},{from:4,to:7},
+      {from:2,to:5},{from:2,to:6},{from:4,to:5}
+    ].map(e=>({...e,color:"#b31b1b"})));
+    new vis.Network(document.getElementById("net"),{nodes,edges},
+      {nodes:{shape:"dot",size:18},physics:{stabilization:true}});
+  </script>
+
+  <h2>🔍 Walkthrough</h2>
+  <p>A <b>node</b> is a person; an <b>edge</b> is a contact between two people. A node's <b>degree</b> is how many contacts it has. A few high-degree nodes — <b>hubs</b> — can act as <b>super-spreaders</b>, reaching many others at once.</p>
+  <p>Two more shape factors matter: short average <b>path length</b> (everyone is only a few hops apart) lets a germ reach the whole network quickly, while high <b>clustering</b> (your contacts know each other) can slow it by trapping it in tight groups.</p>
+
+  <h2>✅ Learning Checks</h2>
+  <p><b>Q1.</b> Why can one hub change an outbreak so much?</p>
+  <details><summary>💡 Hint</summary><p>Think about how many edges a hub has.</p></details>
+  <details class="answer"><summary>✅ Show answer</summary><p>A hub's high degree means one infection there exposes many contacts at once — a super-spreading event.</p></details>
+
+  <p><b>Q2.</b> Does shorter average path length speed up or slow down spread?</p>
+  <details><summary>💡 Hint</summary><p>Fewer hops to reach anyone.</p></details>
+  <details class="answer"><summary>✅ Show answer</summary><p>Speeds it up — the germ needs fewer steps to reach the whole network.</p></details>
+
+  <p><b>Q3.</b> How can high clustering slow an outbreak?</p>
+  <details><summary>💡 Hint</summary><p>Where do infections get "stuck"?</p></details>
+  <details class="answer"><summary>✅ Show answer</summary><p>When your contacts also contact each other, infections recirculate inside a tight group instead of jumping to new ones.</p></details>
+
+  <h2>🔁 Recap</h2>
+  <p>Outbreaks spread faster where the network has <b>hubs</b>, <b>short path lengths</b>, and <b>low clustering</b> — structure, not just the germ, drives the curve.</p>
+  <p class="muted">Built with the <code>interactive-toolmaker</code> skill. Drag the nodes; tap a check to reveal the answer.</p>
+</div></body></html>
