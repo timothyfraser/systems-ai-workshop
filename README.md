@@ -2,7 +2,7 @@
 
 > A hands-on workshop for **Systems Engineering faculty at Cornell** on using AI to do real academic work: write and design documents, pressure-test your research, code faster, and — when you'd rather not send your data to a data center — run capable AI models **entirely on your own laptop**.
 
-*Maintained by Prof. Tim Fraser, Cornell Systems Engineering. **AI-X** = applying AI across engineering disciplines.*
+*Maintained by Prof. Tim Fraser, Cornell Systems Engineering. **AI-X** = advancing AI in engineering research + teaching.*
 
 ---
 
