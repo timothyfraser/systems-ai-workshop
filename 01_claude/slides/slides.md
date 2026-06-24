@@ -59,17 +59,66 @@ style: |
   section.title :is(h1,h2,h3), section.section :is(h1,h2,h3) { color: #fff; }
   section.title a, section.section a { color: #ffd9d9; }
   section.title strong, section.section strong { color: #fff; }
+  /* title hero: text left, big robot right */
+  section.title .hero { display: flex; gap: 24px; align-items: center; width: 100%; }
+  section.title .hero .col-text { flex: 1.15; min-width: 0; }
+  section.title .hero .col-art { flex: 1; display: flex; justify-content: center; }
+  section.title .hero h1 { font-size: 1.5em; margin: 0 0 .1em; }
+  section.title .hero h2 { font-size: 1.05em; margin: 0 0 .5em; opacity: .96; }
+  section.title .hero .who { font-size: .72em; margin: .2em 0; }
+  section.title .hero .tagline { font-size: .8em; margin: .4em 0 0; color: #ffe3e3; }
+  .robot { width: 100%; max-width: 380px; height: auto; filter: drop-shadow(0 14px 26px rgba(0,0,0,.4)); }
 ---
 
 <!-- _class: title -->
 <!-- _paginate: false -->
 
-# 🛠️ Systems AI-X Workshop
-## 🤖 Claude Desktop
-
-**Cornell Systems Engineering Faculty** · Prof. Tim Fraser
-
-*Use AI to do real academic work.* 🎓
+<div class="hero">
+<div class="col-text">
+<h1>🛠️ Systems AI-X Workshop</h1>
+<h2>🤖 Claude Desktop</h2>
+<p class="who"><strong>Cornell Systems Engineering Faculty</strong> · Prof. Tim Fraser</p>
+<p class="tagline"><em>Use AI to do real academic work.</em> 🎓</p>
+</div>
+<div class="col-art">
+<svg class="robot" viewBox="0 0 300 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Friendly workshop robot">
+<defs>
+<pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1"/></pattern>
+</defs>
+<rect x="16" y="20" width="268" height="322" rx="30" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/>
+<rect x="16" y="20" width="268" height="322" rx="30" fill="url(#grid)"/>
+<line x1="150" y1="58" x2="150" y2="34" stroke="#ffe3e3" stroke-width="5" stroke-linecap="round"/>
+<circle cx="150" cy="29" r="9" fill="#ffd9d9" stroke="#8a1414" stroke-width="2"/>
+<rect x="66" y="92" width="13" height="32" rx="6" fill="#ffffff"/>
+<rect x="221" y="92" width="13" height="32" rx="6" fill="#ffffff"/>
+<rect x="78" y="56" width="144" height="106" rx="26" fill="#FBF6EC" stroke="#8a1414" stroke-width="3"/>
+<rect x="92" y="76" width="116" height="60" rx="18" fill="#241318"/>
+<circle cx="126" cy="104" r="13" fill="#ffffff"/>
+<circle cx="129" cy="106" r="6" fill="#b31b1b"/>
+<circle cx="123" cy="100" r="2.4" fill="#ffffff"/>
+<circle cx="174" cy="104" r="13" fill="#ffffff"/>
+<circle cx="177" cy="106" r="6" fill="#b31b1b"/>
+<circle cx="171" cy="100" r="2.4" fill="#ffffff"/>
+<path d="M132 122 Q150 137 168 122" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+<rect x="138" y="160" width="24" height="14" fill="#e7dccb"/>
+<rect x="46" y="190" width="18" height="70" rx="9" fill="#FBF6EC" stroke="#8a1414" stroke-width="3"/>
+<circle cx="55" cy="262" r="12" fill="#ffffff" stroke="#8a1414" stroke-width="2.5"/>
+<rect x="236" y="190" width="18" height="70" rx="9" fill="#FBF6EC" stroke="#8a1414" stroke-width="3"/>
+<circle cx="245" cy="262" r="12" fill="#ffffff" stroke="#8a1414" stroke-width="2.5"/>
+<text x="245" y="270" font-size="26" text-anchor="middle">🔧</text>
+<rect x="62" y="172" width="176" height="134" rx="24" fill="#ffffff" stroke="#8a1414" stroke-width="3"/>
+<circle cx="88" cy="194" r="6" fill="#E86C5D"/>
+<circle cx="108" cy="194" r="6" fill="#E0B23C"/>
+<circle cx="128" cy="194" r="6" fill="#5BA86B"/>
+<rect x="80" y="210" width="140" height="72" rx="14" fill="#b31b1b"/>
+<text x="140" y="259" font-size="38" font-weight="800" text-anchor="end" fill="#ffffff" font-family="'Space Grotesk',-apple-system,sans-serif">AI</text>
+<rect x="146" y="228" width="56" height="44" rx="9" fill="#ffffff"/>
+<text x="174" y="261" font-size="30" font-weight="800" text-anchor="middle" fill="#b31b1b" font-family="'Space Grotesk',-apple-system,sans-serif">-X</text>
+<rect x="98" y="300" width="40" height="26" rx="9" fill="#FBF6EC" stroke="#8a1414" stroke-width="3"/>
+<rect x="162" y="300" width="40" height="26" rx="9" fill="#FBF6EC" stroke="#8a1414" stroke-width="3"/>
+</svg>
+</div>
+</div>
 
 ---
 

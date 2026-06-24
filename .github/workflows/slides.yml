@@ -48,11 +48,12 @@ jobs:
             echo '<h2>🎞️ Slide decks</h2><ul>'
           } > _site/index.html
 
-          # 1) Render each deck
+          # 1) Render each deck to <folder>/slides.html
           for f in */slides/slides.md; do
             mod="$(dirname "$(dirname "$f")")"
-            out="${mod}.html"
+            out="${mod}/slides.html"
             echo "Rendering $f → _site/${out}"
+            mkdir -p "_site/${mod}"
             npx -y @marp-team/marp-cli@latest "$f" -o "_site/${out}" --html
             echo "<li>🎞️ <a href=\"${out}\">${mod}</a></li>" >> _site/index.html
           done

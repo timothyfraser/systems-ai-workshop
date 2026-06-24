@@ -2,15 +2,41 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Why do outbreaks spread faster in some networks?</title>
+<!-- One external dependency: the vis-network graph library, vendored next to this file.
+     Everything else (simulation, stats, reveals) is pure inline JS/CSS and works offline. -->
 <script src="vis-network.min.js"></script>
 <style>
-  :root{--bg:#fff;--ink:#1a1a2e;--muted:#5a6472;--line:#e8e6ea;--accent:#b31b1b;--accent-soft:#f7ebeb;--ok:#1c7c54;}
+  :root{--bg:#fff;--ink:#1a1a2e;--muted:#5a6472;--line:#e8e6ea;--accent:#b31b1b;--accent-soft:#f7ebeb;--ok:#1c7c54;
+        --sus:#cfd6df;--inf:#b31b1b;--rec:#1c7c54;}
   *{box-sizing:border-box} body{font-family:-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);line-height:1.55;margin:0;background:var(--bg)}
-  .wrap{max-width:760px;margin:0 auto;padding:24px}
+  .wrap{max-width:820px;margin:0 auto;padding:24px}
   h1{color:var(--accent);font-size:26px;line-height:1.25}
   h2{color:var(--accent);border-bottom:2px solid var(--line);padding-bottom:4px;margin-top:32px}
   .hero{background:var(--accent-soft);border-left:5px solid var(--accent);padding:16px 18px;border-radius:8px;font-size:18px}
-  #net{height:420px;border:1px solid var(--line);border-radius:10px}
+  /* ---- the interactive lab ---- */
+  .lab{border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:8px;background:#fcfcfd}
+  #net{height:460px;border:1px solid var(--line);border-radius:10px;background:#fff;touch-action:none}
+  .hint{font-size:14px;color:var(--muted);margin:0 0 10px}
+  .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+  button{font:inherit;font-weight:600;cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:#fff;
+         border-radius:8px;padding:9px 14px;min-height:44px}
+  button.ghost{background:#fff;color:var(--accent)}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  .slider{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);min-height:44px}
+  .slider input{width:120px}
+  /* live stat chips */
+  .stats{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+  .chip{flex:1 1 110px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;text-align:center;background:#fff}
+  .chip .n{font-size:24px;font-weight:700;line-height:1}
+  .chip .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+  .chip.s .n{color:#5a6472} .chip.i .n{color:var(--inf)} .chip.r .n{color:var(--rec)} .chip.t .n{color:var(--ink)}
+  /* live S/I/R proportion bar */
+  .bar{display:flex;height:14px;border-radius:7px;overflow:hidden;border:1px solid var(--line);margin:4px 0 2px}
+  .bar>span{display:block;transition:width .25s}
+  .bar .bs{background:var(--sus)} .bar .bi{background:var(--inf)} .bar .br{background:var(--rec)}
+  .legend{display:flex;gap:14px;font-size:13px;color:var(--muted);margin-top:6px;flex-wrap:wrap}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;vertical-align:middle}
+  .status{margin:8px 0 0;font-size:15px;font-weight:600;min-height:22px}
   details{border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:8px 0}
   details summary{cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:center}
   details.answer[open]{border-color:var(--ok)} details.answer summary{color:var(--ok)}
@@ -20,46 +46,176 @@
   <h1>Why do outbreaks spread faster in some networks than others?</h1>
 
   <h2>🎯 Big Picture</h2>
-  <p class="hero">Two communities can face the same germ and see very different outbreaks. The difference is often not the germ — it's the <b>shape of the contact network</b>: who is connected to whom.</p>
+  <p class="hero">Two communities can face the same germ and see very different outbreaks. The difference is often not the germ — it's the <b>shape of the contact network</b>: who is connected to whom. Below, <b>you run the outbreak yourself</b>.</p>
 
-  <h2>🗺️ The Map</h2>
-  <div id="net"></div>
-  <script>
-    const nodes = new vis.DataSet([
-      {id:1,label:"Node\n(a person)",color:"#b31b1b",font:{color:"#fff"}},
-      {id:2,label:"Edge\n(a contact)",color:"#264653",font:{color:"#fff"}},
-      {id:3,label:"Degree",color:"#264653",font:{color:"#fff"}},
-      {id:4,label:"Hub",color:"#b31b1b",font:{color:"#fff"}},
-      {id:5,label:"Path length",color:"#264653",font:{color:"#fff"}},
-      {id:6,label:"Clustering",color:"#264653",font:{color:"#fff"}},
-      {id:7,label:"Super-\nspreader",color:"#b31b1b",font:{color:"#fff"}}
-    ]);
-    const edges = new vis.DataSet([
-      {from:1,to:2},{from:2,to:3},{from:3,to:4},{from:4,to:7},
-      {from:2,to:5},{from:2,to:6},{from:4,to:5}
-    ].map(e=>({...e,color:"#b31b1b"})));
-    new vis.Network(document.getElementById("net"),{nodes,edges},
-      {nodes:{shape:"dot",size:18},physics:{stabilization:true}});
-  </script>
+  <h2>🗺️ The Map — run an outbreak</h2>
+  <div class="lab">
+    <p class="hint">👆 <b>Click any node</b> to start the outbreak there, then press <b>▶ Play</b>. Big nodes are <b>hubs</b> (many contacts). Watch how many rounds it takes to reach everyone — and notice that seeding a hub burns through the network far faster than seeding someone on the edge.</p>
+    <div class="controls">
+      <button id="play">▶ Play</button>
+      <button id="step" class="ghost">⏭ Step</button>
+      <button id="reset" class="ghost">↺ Reset</button>
+      <label class="slider">Contagiousness
+        <input id="prob" type="range" min="20" max="100" step="10" value="100">
+        <span id="probv">100%</span>
+      </label>
+    </div>
+
+    <div class="stats">
+      <div class="chip s"><div class="n" id="cS">50</div><div class="k">Susceptible</div></div>
+      <div class="chip i"><div class="n" id="cI">0</div><div class="k">Infected</div></div>
+      <div class="chip r"><div class="n" id="cR">0</div><div class="k">Recovered</div></div>
+      <div class="chip t"><div class="n" id="cRound">0</div><div class="k">Round (degrees)</div></div>
+    </div>
+    <div class="bar"><span class="bs" id="bS" style="width:100%"></span><span class="bi" id="bI" style="width:0"></span><span class="br" id="bR" style="width:0"></span></div>
+    <div class="legend">
+      <span><i style="background:var(--sus)"></i>Susceptible — not yet reached</span>
+      <span><i style="background:var(--inf)"></i>Infected — spreading now</span>
+      <span><i style="background:var(--rec)"></i>Recovered — immune, done spreading</span>
+    </div>
+    <p class="status" id="status">Click a node to choose patient zero.</p>
+
+    <div id="net"></div>
+    <p class="muted" style="font-size:13px;margin-top:8px">Peak infected at once: <b id="peak">0</b> · Reached <b id="pct">0%</b> of the network.</p>
+  </div>
 
   <h2>🔍 Walkthrough</h2>
-  <p>A <b>node</b> is a person; an <b>edge</b> is a contact between two people. A node's <b>degree</b> is how many contacts it has. A few high-degree nodes — <b>hubs</b> — can act as <b>super-spreaders</b>, reaching many others at once.</p>
-  <p>Two more shape factors matter: short average <b>path length</b> (everyone is only a few hops apart) lets a germ reach the whole network quickly, while high <b>clustering</b> (your contacts know each other) can slow it by trapping it in tight groups.</p>
+  <p>Each <b>node</b> is a person and each <b>edge</b> is a contact. A node's <b>degree</b> is how many contacts it has; the big nodes are <b>hubs</b>. The simulation is the classic <b>S‑I‑R</b> model: people start <b>Susceptible</b>, become <b>Infected</b> for one round (when they can pass it on), then <b>Recover</b> and stay immune.</p>
+  <p>Each <b>round</b> is one step outward through the network — the same idea as a <b>degree of separation</b>. The round counter tells you how many hops it took the germ to travel from patient zero to everyone. Seed a <b>hub</b> and that number is small; seed a node out on the fringe and the germ has to crawl, round by round, before it reaches the core.</p>
+  <p>Drop <b>contagiousness</b> below 100% and transmission becomes a coin flip on every contact — now the outbreak can fizzle out early and <i>never</i> consume the whole network, just like a real one that dies down before everyone is exposed.</p>
 
   <h2>✅ Learning Checks</h2>
-  <p><b>Q1.</b> Why can one hub change an outbreak so much?</p>
-  <details><summary>💡 Hint</summary><p>Think about how many edges a hub has.</p></details>
-  <details class="answer"><summary>✅ Show answer</summary><p>A hub's high degree means one infection there exposes many contacts at once — a super-spreading event.</p></details>
+  <p><b>Q1.</b> You can seed the outbreak anywhere. Which choice infects the whole network in the <i>fewest</i> rounds — a hub or a fringe node? Try both and read the round counter.</p>
+  <details><summary>💡 Hint</summary><p>Count the hops from your seed to the farthest person.</p></details>
+  <details class="answer"><summary>✅ Show answer</summary><p>A <b>hub</b>. Because it sits a few hops from everyone, the germ reaches the whole network in fewer rounds — that short average path length is exactly why hubs drive fast outbreaks.</p></details>
 
-  <p><b>Q2.</b> Does shorter average path length speed up or slow down spread?</p>
-  <details><summary>💡 Hint</summary><p>Fewer hops to reach anyone.</p></details>
-  <details class="answer"><summary>✅ Show answer</summary><p>Speeds it up — the germ needs fewer steps to reach the whole network.</p></details>
+  <p><b>Q2.</b> Set contagiousness to 40% and run it a few times from the same node. Why is the final size different each time?</p>
+  <details><summary>💡 Hint</summary><p>Every contact is now a chance, not a certainty.</p></details>
+  <details class="answer"><summary>✅ Show answer</summary><p>Transmission is now <b>stochastic</b> — each edge either passes the germ or doesn't. Some runs the germ finds a hub early and explodes; others it dies in a quiet corner. Same network, different luck.</p></details>
 
-  <p><b>Q3.</b> How can high clustering slow an outbreak?</p>
-  <details><summary>💡 Hint</summary><p>Where do infections get "stuck"?</p></details>
-  <details class="answer"><summary>✅ Show answer</summary><p>When your contacts also contact each other, infections recirculate inside a tight group instead of jumping to new ones.</p></details>
+  <p><b>Q3.</b> What does the "Recovered" count represent, and why does the "Infected" count rise and then fall?</p>
+  <details><summary>💡 Hint</summary><p>People are only infectious for one round.</p></details>
+  <details class="answer"><summary>✅ Show answer</summary><p>Recovered = people who already had it and are now immune. Infected is the moving <b>wave front</b>: it grows while there are fresh susceptibles to reach, then collapses once the germ runs out of new contacts. That rise-and-fall is the classic epidemic curve.</p></details>
 
   <h2>🔁 Recap</h2>
-  <p>Outbreaks spread faster where the network has <b>hubs</b>, <b>short path lengths</b>, and <b>low clustering</b> — structure, not just the germ, drives the curve.</p>
-  <p class="muted">Built with the <code>interactive-toolmaker</code> skill. Drag the nodes; tap a check to reveal the answer.</p>
+  <p>Outbreaks spread faster where the network has <b>hubs</b> and <b>short path lengths</b> — you just watched a hub seed consume the network in a handful of rounds while a fringe seed took many more. Structure, not just the germ, drives the curve.</p>
+  <p class="muted">Built with the <code>interactive-toolmaker</code> skill. Click a node, press Play, and change the contagiousness — then reset and try a different patient zero.</p>
+
+<script>
+/* ---------- seeded RNG so the network is the same every load ---------- */
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+const layoutRng = mulberry32(7);
+let rollRng = mulberry32(99);            // transmission coin flips; reseeded on reset
+
+/* ---------- build a 50-node network with hubs (preferential attachment) ---------- */
+const N = 50;
+const adj = Array.from({length:N},()=>new Set());
+const edgeList = [];
+function addEdge(a,b){ if(a!==b && !adj[a].has(b)){ adj[a].add(b); adj[b].add(a); edgeList.push({from:a,to:b,color:{color:"#dcdfe4"},width:1}); } }
+addEdge(0,1); addEdge(1,2); addEdge(0,2);
+const pool = [0,0,1,1,2,2];               // degree-weighted draw pool
+for(let v=3; v<N; v++){
+  const chosen = new Set();
+  while(chosen.size < 2){ chosen.add(pool[Math.floor(layoutRng()*pool.length)]); }
+  chosen.forEach(u=>{ addEdge(v,u); pool.push(u,v); });
+}
+for(let k=0;k<14;k++){ addEdge(Math.floor(layoutRng()*N), Math.floor(layoutRng()*N)); } // extra contacts/clustering
+
+const deg = adj.map(s=>s.size);
+const hub = deg.indexOf(Math.max(...deg));
+const fringe = deg.indexOf(Math.min(...deg));   // a low-degree node out on the edge
+
+/* ---------- vis-network ---------- */
+const SUS={background:"#cfd6df",border:"#9aa6b2"};
+const INF={background:"#b31b1b",border:"#7f1212"};
+const REC={background:"#1c7c54",border:"#13593c"};
+const nodes = new vis.DataSet(Array.from({length:N},(_,i)=>({
+  id:i, label:String(i), title:`Person ${i} · ${deg[i]} contacts`,
+  size:9+deg[i]*1.6, color:{...SUS}, font:{color:"#33404f",size:12}
+})));
+const edges = new vis.DataSet(edgeList);
+const net = new vis.Network(document.getElementById("net"), {nodes,edges}, {
+  nodes:{shape:"dot",borderWidth:2},
+  edges:{smooth:false},
+  physics:{barnesHut:{gravitationalConstant:-4200,springLength:90,avoidOverlap:.4},stabilization:{iterations:220}},
+  interaction:{hover:true,dragView:true,zoomView:true}
+});
+net.once("stabilizationIterationsDone",()=>{ net.setOptions({physics:false}); demo(); });
+
+/* ---------- simulation state ---------- */
+let state = new Array(N).fill(0);         // 0=S, 1=I, 2=R
+let round=0, peak=0, seeded=false, timer=null, p=1.0;
+
+function colorFor(s){ return s===1?{...INF}:s===2?{...REC}:{...SUS}; }
+function paint(){ nodes.update(state.map((s,i)=>({id:i,color:colorFor(s)}))); }
+function counts(){ let S=0,I=0,R=0; for(const s of state){ if(s===0)S++; else if(s===1)I++; else R++; } return {S,I,R}; }
+
+function render(msg){
+  const {S,I,R}=counts(); peak=Math.max(peak,I);
+  cS.textContent=S; cI.textContent=I; cR.textContent=R; cRound.textContent=round;
+  bS.style.width=(S/N*100)+"%"; bI.style.width=(I/N*100)+"%"; bR.style.width=(R/N*100)+"%";
+  peakEl.textContent=peak; pct.textContent=Math.round((I+R)/N*100)+"%";
+  if(msg) status.textContent=msg;
+}
+
+function seed(i){
+  reset(false);
+  state[i]=1; seeded=true; round=0;
+  paint(); render(`🦠 Patient zero is person ${i} (${deg[i]} contacts). Press ▶ Play or ⏭ Step.`);
+}
+
+function stepOnce(){
+  if(!seeded) { status.textContent="👆 Click a node first to choose patient zero."; return false; }
+  const front=[]; for(let i=0;i<N;i++) if(state[i]===1) front.push(i);
+  if(front.length===0){ stopPlay(); finish(); return false; }
+  const next=new Set();
+  for(const u of front){ for(const v of adj[u]){ if(state[v]===0 && rollRng()<p) next.add(v); } }
+  for(const u of front) state[u]=2;        // infectious for exactly one round, then immune
+  next.forEach(v=>state[v]=1);
+  round++; paint();
+  const {S,I}=counts();
+  if(S===0){ render(`🔥 Whole network infected in ${round} rounds!`); stopPlay(); return false; }
+  if(I===0){ render(`🛑 Outbreak burned out after ${round} rounds — it never reached everyone.`); stopPlay(); finish(); return false; }
+  render(`Round ${round}: the wave is moving outward…`);
+  return true;
+}
+
+function finish(){
+  const {R}=counts();
+  if(R<N && R>0) status.textContent=`🛑 Outbreak ended at round ${round}. It reached ${Math.round(R/N*100)}% of the network — lower contagiousness or an unlucky start can spare people.`;
+}
+
+function playPause(){
+  if(timer){ stopPlay(); return; }
+  if(!seeded){ status.textContent="👆 Click a node first to choose patient zero."; return; }
+  play.textContent="⏸ Pause";
+  timer=setInterval(()=>{ if(!stepOnce()) stopPlay(); }, 650);
+}
+function stopPlay(){ if(timer){ clearInterval(timer); timer=null; } play.textContent="▶ Play"; }
+
+function reset(repaint=true){
+  stopPlay(); state.fill(0); round=0; peak=0; seeded=false; rollRng=mulberry32(99);
+  if(repaint){ paint(); render("Click a node to choose patient zero."); }
+}
+
+/* ---------- wire up controls ---------- */
+const cS=document.getElementById("cS"),cI=document.getElementById("cI"),cR=document.getElementById("cR"),
+      cRound=document.getElementById("cRound"),bS=document.getElementById("bS"),bI=document.getElementById("bI"),
+      br=null,bR=document.getElementById("bR"),status=document.getElementById("status"),
+      peakEl=document.getElementById("peak"),pct=document.getElementById("pct"),
+      play=document.getElementById("play"),probv=document.getElementById("probv");
+document.getElementById("step").onclick=()=>{ stopPlay(); stepOnce(); };
+document.getElementById("reset").onclick=()=>reset(true);
+play.onclick=playPause;
+document.getElementById("prob").oninput=e=>{ p=(+e.target.value)/100; probv.textContent=e.target.value+"%"; };
+net.on("click",params=>{ if(params.nodes.length){ seed(params.nodes[0]); } });
+
+/* ---------- a short auto-demo so the page is alive on first paint ---------- */
+function demo(){
+  seed(fringe);
+  for(let k=0;k<2;k++) stepOnce();
+  status.textContent=`👆 This outbreak started on the fringe (person ${fringe}) — it's only ${Math.round((counts().I+counts().R)/N*100)}% through. Hit ↺ Reset, then seed a big hub and watch it move far faster.`;
+}
+render();
+</script>
 </div></body></html>
