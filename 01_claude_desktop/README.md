@@ -17,6 +17,7 @@
 | [🧹 Clean Up & Explain Code](ACTIVITY_code_help.md) | messy code rewritten and explained | — |
 | [🧰 Skill Suite](ACTIVITY_skill_suite.md) | one command that orients the agent to every skill | `/orient` |
 | [🧬 Sub-agents → Codebook](ACTIVITY_subagents.md) | fan out one agent per column to build a data dictionary | `column-documenter` |
+| [🧭 Keep the Agent on Track](ACTIVITY_stay_on_track.md) | pick a framework to steer a complex task | *the on-track suite* |
 
 Each card hands you the **exact prompt** — no need to invent an idea on the spot.
 
@@ -33,6 +34,17 @@ Ship in [`.claude/skills/`](../.claude/skills/); they load when you open this re
 - [`claude-desktop-routines`](../.claude/skills/claude-desktop-routines/SKILL.md) — turn a recurring chore into a reusable routine
 
 Plus a sub-agent in [`.claude/agents/`](../.claude/agents/): [`column-documenter`](../.claude/agents/column-documenter.md) — documents one dataset column at a time, fanned out across all columns.
+
+### 🧭 The "Keep on Track" suite
+
+Six frameworks for steering a complex task — surfaced together by [`/orient`](../.claude/commands/orient.md):
+
+- [`system-requirements`](../.claude/skills/system-requirements/SKILL.md) — goals, user needs, functions, acceptance, traceability
+- [`handoff-log`](../.claude/skills/handoff-log/SKILL.md) — status + checkbox task list the agent updates each session
+- [`mermaid-map`](../.claude/skills/mermaid-map/SKILL.md) — how the pieces relate, as diagrams
+- [`design-doc`](../.claude/skills/design-doc/SKILL.md) — agree the approach before any code
+- [`decision-log`](../.claude/skills/decision-log/SKILL.md) — append-only record of the "why"
+- [`definition-of-done`](../.claude/skills/definition-of-done/SKILL.md) — checkable "done", pinned up front
 
 ---
 
