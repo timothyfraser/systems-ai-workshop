@@ -8,7 +8,7 @@
 
 1. Download it: **[claude.ai/download](https://claude.ai/download)** (macOS or Windows).
 2. Install, open it, and **sign in**.
-   - *Cornell note:* if your department has a Claude for Work / Team plan, sign in with your Cornell email so usage is covered. Otherwise a free or Pro account is fine.
+   - *Cornell note:* suggest you sign in with your Cornell NetID account under a free account.
 
 You're ready. 🎉
 
@@ -24,15 +24,6 @@ If you have a few spare minutes, installing **Git** ahead of time helps us move 
    ```bash
    git --version
    ```
-
----
-
-## 🧰 Going further (self-serve, totally optional)
-
-Curious about the bonus tools? Their install guides live with their modules:
-
-- **Install Cursor** → [`03_cursor/SETUP_cursor.md`](../03_cursor/SETUP_cursor.md)
-- **Install Ollama** (local AI) → [`04_local/SETUP_ollama.md`](../04_local/SETUP_ollama.md)
 
 ---
 
