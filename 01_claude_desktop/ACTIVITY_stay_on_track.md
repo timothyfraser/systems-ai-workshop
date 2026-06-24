@@ -14,6 +14,9 @@ On a hard, multi-step task the difference between a great result and a mess is *
 | [`design-doc`](../.claude/skills/design-doc/SKILL.md) | the *approach*, agreed before any code |
 | [`decision-log`](../.claude/skills/decision-log/SKILL.md) | the *why* behind past choices, so they aren't re-litigated |
 | [`definition-of-done`](../.claude/skills/definition-of-done/SKILL.md) | checkable "done" — criteria and tests, up front |
+| [`plan-then-act`](../.claude/skills/plan-then-act/SKILL.md) | a numbered plan, approved before any execution |
+| [`vertical-slice`](../.claude/skills/vertical-slice/SKILL.md) | thin end-to-end slices, each runnable, instead of layers |
+| [`project-memory`](../.claude/skills/project-memory/SKILL.md) | a house-rules file the agent reads every session |
 
 > 💡 Run [`/orient`](../.claude/commands/orient.md) in Claude Code to see the whole suite at once.
 

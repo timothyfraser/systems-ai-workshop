@@ -37,7 +37,7 @@ Plus a sub-agent in [`.claude/agents/`](../.claude/agents/): [`column-documenter
 
 ### 🧭 The "Keep on Track" suite
 
-Six frameworks for steering a complex task — surfaced together by [`/orient`](../.claude/commands/orient.md):
+Nine frameworks for steering a complex task — surfaced together by [`/orient`](../.claude/commands/orient.md):
 
 - [`system-requirements`](../.claude/skills/system-requirements/SKILL.md) — goals, user needs, functions, acceptance, traceability
 - [`handoff-log`](../.claude/skills/handoff-log/SKILL.md) — status + checkbox task list the agent updates each session
@@ -45,6 +45,9 @@ Six frameworks for steering a complex task — surfaced together by [`/orient`](
 - [`design-doc`](../.claude/skills/design-doc/SKILL.md) — agree the approach before any code
 - [`decision-log`](../.claude/skills/decision-log/SKILL.md) — append-only record of the "why"
 - [`definition-of-done`](../.claude/skills/definition-of-done/SKILL.md) — checkable "done", pinned up front
+- [`plan-then-act`](../.claude/skills/plan-then-act/SKILL.md) — a numbered plan, approved before executing
+- [`vertical-slice`](../.claude/skills/vertical-slice/SKILL.md) — thin end-to-end slices instead of layers
+- [`project-memory`](../.claude/skills/project-memory/SKILL.md) — a house-rules file read every session
 
 ---
 
