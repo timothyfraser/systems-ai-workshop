@@ -24,7 +24,7 @@ On every push to `main`, the [`slides` workflow](../../.github/workflows/slides.
 **One-time setup:** repo **Settings → Pages → Source: GitHub Actions**. After that, this deck lands at:
 
 ```
-https://timothyfraser.github.io/systems-ai-workshop/01_claude_desktop.html
+https://timothyfraser.github.io/systems-ai-workshop/01_claude.html
 ```
 
 …and a landing page listing all decks at the site root. 🌐

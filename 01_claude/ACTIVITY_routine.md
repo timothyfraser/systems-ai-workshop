@@ -9,7 +9,7 @@ A handy scholar's habit — once a month, Claude searches the web for recent men
 ```
 Use the scholar-mentions-log skill. I'm [Your Name], [your field / Cornell affiliation].
 Search the web for mentions of me and my work from the last 60 days. Append the new ones to
-01_claude_desktop/examples/mentions.csv with date, title, source, link, and a one-line
+01_claude/examples/mentions.csv with date, title, source, link, and a one-line
 description. Skip anyone else who shares my name. Then tell me the 2–3 most noteworthy.
 ```
 

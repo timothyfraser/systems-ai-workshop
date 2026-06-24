@@ -2,7 +2,7 @@
 
 > A hands-on workshop for **Systems Engineering faculty at Cornell** on using AI to do real academic work: write and design documents, pressure-test your research, code faster, and — when you'd rather not send your data to a data center — run capable AI models **entirely on your own laptop**.
 
-*Maintained by Prof. Tim Fraser. The "X" was added by management. We choose to read it as **cross-disciplinary**, **experimental**, and **bring-your-own-everything**.*
+*Maintained by Prof. Tim Fraser, Cornell Systems Engineering. **AI-X** = applying AI across engineering disciplines.*
 
 ---
 
@@ -46,7 +46,7 @@ Work through these in order, or jump to what you need. **The live session focuse
 | # | Module | What you'll do |
 |---|--------|----------------|
 | 00 | [Setup](00_setup/README.md) | Install Git, Claude Desktop, Cursor, and Ollama |
-| 01 | [**Claude Desktop**](01_claude_desktop/README.md) ⭐ | Interactive tutorials, posters, red-teaming, a monthly routine, sub-agents, skill suites |
+| 01 | [**Claude Desktop**](01_claude/README.md) ⭐ | Interactive tutorials, posters, red-teaming, a monthly routine, sub-agents, skill suites |
 | 02 | [Red-Teaming Your Research](02_redteam/README.md) | *(bonus)* an adversarial review of your own paper |
 | 03 | [Cursor](03_cursor/README.md) | *(bonus)* IDE-integrated coding agent |
 | 04 | [Local AI (Ollama & BYOM)](04_local/README.md) | *(bonus)* run capable models on your laptop — no data center |
@@ -74,7 +74,7 @@ The repo ships ready-to-use config folders that activate automatically when you 
 systems-ai-workshop/
 ├── README.md
 ├── 00_setup/                 # install everything before you arrive
-├── 01_claude_desktop/        # ⭐ the main event — activity cards
+├── 01_claude/        # ⭐ the main event — activity cards
 ├── 02_redteam/               # (bonus) adversarial review of your own work
 ├── 03_cursor/                # (bonus) IDE-integrated coding agent
 ├── 04_local/                 # (bonus) Ollama + local models + local agents

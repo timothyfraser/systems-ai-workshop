@@ -7,10 +7,10 @@ A single agent documenting a 20-column dataset gets sloppy by column 12. Spawn *
 **Do this:** open this repo in **Claude Code** (`claude`) and paste:
 
 ```
-Read 01_claude_desktop/examples/social_infra.csv. For EACH column, dispatch a
+Read 01_claude/examples/social_infra.csv. For EACH column, dispatch a
 column-documenter subagent (in parallel) to draft its codebook entry from the
 column name and the sample values. Then assemble every entry, in column order,
-into 01_claude_desktop/examples/CODEBOOK.md with a one-line header.
+into 01_claude/examples/CODEBOOK.md with a one-line header.
 ```
 
 ✅ **Done when:** `CODEBOOK.md` has one entry per column — and the **caveats** flag the quirks: the `999` in `access_score`, the `0` capacities, and the blank `year_built` / `last_survey`.
