@@ -35,7 +35,7 @@ If you only do one thing, do the [setup checklist](00_setup/CHECKLIST.md).
 
 This workshop is about **high-leverage, practical** AI workflows for faculty — automating administrative work, raising research rigor, and speeding up coding — with a strong thread on **privacy and local control**.
 
-A running theme: **treat AI output as untrusted input.** Models are assistants, not authorities. We code and write *with* them, and we verify everything — a habit that matters even more for students headed into regulated sectors like the DoD.
+A running theme: **treat AI output as untrusted input.** Models are assistants, not authorities. We code and write *with* them, and we verify everything — a habit worth modeling for the students you teach, many headed into regulated sectors like the DoD.
 
 ---
 
@@ -58,12 +58,12 @@ Work through these in order, or jump to what you need. **The live session focuse
 | Tool | Best at | Where it runs |
 |------|---------|---------------|
 | **Claude Desktop** | Skills, interactive tutorials, red-teaming, **sub-agents**, one-command skill suites | Anthropic cloud |
-| **Cursor** | Multi-file code context, refactoring, IDE-integrated coding | Cloud-coordinated (see [the honest note](04_local/README.md#-the-honest-truth-about-cursor-and-local-models)) |
+| **Cursor** | Multi-file code context, refactoring, IDE-integrated coding | Cloud-coordinated (see [the honest note](04_local/README.md#-cursors-native-ai-vs-a-local-agent-inside-it)) |
 | **Ollama + a local agent** | Private coding & analysis with **zero data leaving your machine** | 100% local |
 
 The repo ships ready-to-use config folders that activate automatically when you open it:
 
-- **[`.claude/`](.claude/)** — Skills (`interactive-toolmaker`, `html-poster`, `red-team-research`, `scholar-mentions-log`, `claude-desktop-routines`) plus a 6-skill **"keep on track"** suite (`system-requirements`, `handoff-log`, `mermaid-map`, `design-doc`, `decision-log`, `definition-of-done`), the [`/orient`](.claude/commands/orient.md) command, and the [`column-documenter`](.claude/agents/column-documenter.md) sub-agent
+- **[`.claude/`](.claude/)** — Skills (`interactive-toolmaker`, `html-poster`, `red-team-research`, `scholar-mentions-log`, `claude-desktop-routines`) plus a 9-skill **"keep on track"** suite (requirements, handoff log, mermaid map, design doc, decision log, definition of done, plan-then-act, vertical slice, project memory), the [`/orient`](.claude/commands/orient.md) command, and the [`column-documenter`](.claude/agents/column-documenter.md) sub-agent
 - **[`.cursor/`](.cursor/)** — coding-style + README rules and a local-model coding Skill
 
 ---
@@ -74,13 +74,15 @@ The repo ships ready-to-use config folders that activate automatically when you 
 systems-ai-workshop/
 ├── README.md
 ├── 00_setup/                 # install everything before you arrive
-├── 01_claude_desktop/        # Skills, routines, HTML docs, Claude Code
-├── 02_redteam/               # adversarial review of your own work
-├── 03_cursor/                # IDE agent vs. conversational analyst
-├── 04_local/                 # ⭐ Ollama + local models + local agents
+├── 01_claude_desktop/        # ⭐ the main event — activity cards
+├── 02_redteam/               # (bonus) adversarial review of your own work
+├── 03_cursor/                # (bonus) IDE-integrated coding agent
+├── 04_local/                 # (bonus) Ollama + local models + local agents
 │   └── scripts/              # one-command local setup
-├── .claude/                  # Skills that load in Claude Desktop / Claude Code
-│   └── skills/
+├── .claude/                  # loads in Claude Desktop / Claude Code
+│   ├── skills/               # the skill library (incl. the on-track suite)
+│   ├── commands/             # /orient
+│   └── agents/               # column-documenter sub-agent
 ├── .cursor/                  # rules + Skills that load in Cursor
 │   ├── rules/
 │   └── skills/
