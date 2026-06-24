@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Systems AI-X Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#C2150F;          /* bright vivid Cornell red */
+    --red-deep:#9E0E0A;     /* shadow / depth */
+    --red-line:#E0584F;     /* hairlines on red */
+    --cream:#FBF6EC;        /* terminal panel */
+    --ink:#1C1815;          /* terminal text */
+    --ink-soft:#6B6258;     /* terminal comments */
+    --green:#1F8A4C;        /* terminal prompt */
+    --white:#FFFFFF;
+    --white-dim:rgba(255,255,255,.74);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  html,body{background:#7d0a07;}
+
+  body{
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    display:flex;
+    justify-content:center;
+    padding:32px 18px;
+    color:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .poster{
+    width:100%;
+    max-width:680px;
+    background:
+      radial-gradient(120% 90% at 100% 0%, var(--red) 0%, var(--red-deep) 100%);
+    border:1px solid var(--red-line);
+    border-radius:20px;
+    padding:46px 46px 38px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  /* faint engineered grid in the backdrop */
+  .poster::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:34px 34px;
+    -webkit-mask-image:radial-gradient(120% 80% at 80% -10%,#000 0%,transparent 70%);
+            mask-image:radial-gradient(120% 80% at 80% -10%,#000 0%,transparent 70%);
+    pointer-events:none;
+  }
+
+  .poster > *{position:relative;z-index:1;}
+
+  /* links sit on the red field — keep them white + underlined */
+  .poster a{color:var(--white);text-decoration:underline;text-underline-offset:2px;}
+
+  /* ---- eyebrow ---- */
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--white-dim);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:26px;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--white);flex:none;box-shadow:0 0 0 4px rgba(255,255,255,.15);}
+
+  /* ---- hero ---- */
+  .hero{margin-bottom:8px;}
+  .hero h1{
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:700;
+    font-size:clamp(46px,11vw,76px);
+    line-height:.92;
+    letter-spacing:-.02em;
+  }
+  .hero h1 .ai{ display:inline-block; }
+  .hero h1 .x{
+    color:var(--red);
+    background:var(--white);
+    border-radius:10px;
+    padding:0 .12em;
+    margin-left:.06em;
+  }
+  .wrench{font-size:.5em;vertical-align:.18em;margin-right:.12em;}
+
+  .wink{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:13px;
+    color:var(--white-dim);
+    margin-top:16px;
+    line-height:1.5;
+    max-width:46ch;
+  }
+  .wink b{color:var(--white);font-weight:500;}
+
+  .lede{
+    font-size:16.5px;
+    line-height:1.5;
+    margin-top:18px;
+    max-width:50ch;
+    color:#fdeeee;
+  }
+  .lede strong{font-weight:600;color:var(--white);}
+
+  hr.rule{
+    border:0;height:1px;background:var(--red-line);opacity:.6;
+    margin:30px 0;
+  }
+
+  /* ---- terminal / logistics panel : the signature ---- */
+  .term{
+    background:var(--cream);
+    color:var(--ink);
+    border-radius:12px;
+    font-family:"IBM Plex Mono",monospace;
+    box-shadow:0 18px 40px -18px rgba(0,0,0,.55);
+    overflow:hidden;
+  }
+  .term-bar{
+    display:flex;align-items:center;gap:8px;
+    padding:11px 15px;
+    background:#ECE4D6;
+    border-bottom:1px solid #ddd2bf;
+  }
+  .term-bar .d{width:11px;height:11px;border-radius:50%;}
+  .term-bar .d:nth-child(1){background:#E86C5D;}
+  .term-bar .d:nth-child(2){background:#E0B23C;}
+  .term-bar .d:nth-child(3){background:#5BA86B;}
+  .term-bar .name{
+    margin-left:8px;font-size:11.5px;color:var(--ink-soft);letter-spacing:.02em;
+  }
+  .term-body{padding:18px 20px 20px;}
+  .term-body .cmt{color:var(--ink-soft);font-size:12.5px;margin-bottom:10px;}
+  .row{
+    display:grid;
+    grid-template-columns:88px 1fr;
+    gap:12px;
+    padding:7px 0;
+    font-size:14.5px;
+    align-items:baseline;
+  }
+  .row + .row{border-top:1px dashed #e3d9c6;}
+  .key{color:var(--green);font-weight:600;}
+  .val{color:var(--ink);font-weight:500;}
+  .val .big{font-weight:600;}
+  .prompt{
+    margin-top:16px;
+    font-size:13.5px;
+    color:var(--ink);
+    display:flex;align-items:center;gap:7px;
+  }
+  .prompt .sym{color:var(--green);font-weight:600;}
+  .cursor{
+    display:inline-block;width:9px;height:17px;background:var(--ink);
+    transform:translateY(2px);
+    animation:blink 1.05s steps(1) infinite;
+  }
+  @keyframes blink{50%{opacity:0;}}
+
+  /* ---- learn list ---- */
+  .section-label{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--white-dim);margin-bottom:16px;
+  }
+  .learn{display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;}
+  .learn .item{display:flex;gap:11px;align-items:flex-start;}
+  .learn .n{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+    color:var(--white);opacity:.55;flex:none;padding-top:2px;width:22px;
+  }
+  .learn .t{font-size:14.5px;line-height:1.42;color:#fdeeee;}
+  .learn .t b{color:var(--white);font-weight:600;}
+
+  /* ---- bring-this callout ---- */
+  .bring{
+    margin-top:30px;
+    display:flex;gap:16px;align-items:flex-start;
+    background:rgba(0,0,0,.16);
+    border:1px solid var(--red-line);
+    border-radius:12px;
+    padding:18px 20px;
+  }
+  .bring .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
+    letter-spacing:.1em;text-transform:uppercase;
+    background:var(--white);color:var(--red);
+    border-radius:6px;padding:5px 9px;flex:none;
+  }
+  .bring .txt{font-size:14px;line-height:1.5;color:#fdeeee;}
+  .bring .txt b{color:var(--white);font-weight:600;}
+
+  /* ---- footer ---- */
+  .foot{
+    margin-top:30px;padding-top:20px;border-top:1px solid var(--red-line);
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+    flex-wrap:wrap;
+  }
+  .foot .repo{
+    font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--white);
+  }
+  .foot .repo .arrow{opacity:.6;margin-right:6px;}
+  .foot .host{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;
+    color:var(--white-dim);letter-spacing:.04em;text-align:right;
+  }
+
+  @media (max-width:520px){
+    .poster{padding:34px 26px 30px;}
+    .learn{grid-template-columns:1fr;}
+    .row{grid-template-columns:74px 1fr;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .cursor{animation:none;}
+  }
+</style>
+</head>
+<body>
+  <div class="poster">
+
+    <div class="eyebrow">
+      <span class="dot"></span>
+      Cornell Systems Engineering &nbsp;·&nbsp; Faculty &amp; Staff
+    </div>
+
+    <div class="hero">
+      <h1><span class="wrench">🛠️</span>SYSTEMS <span class="ai">AI</span><span class="x">-X</span></h1>
+      <p class="wink">
+        // <b>AI-X</b> — advancing AI in <b>engineering research</b> &amp; <b>teaching</b>.
+      </p>
+      <p class="lede">
+        A hands-on workshop on using AI to do <strong>real academic work</strong> —
+        write and design documents, pressure-test your research, code faster, and turn
+        ideas into <strong>polished visuals with no code</strong>.
+      </p>
+    </div>
+
+    <hr class="rule">
+
+    <div class="term">
+      <div class="term-bar">
+        <span class="d"></span><span class="d"></span><span class="d"></span>
+        <span class="name">workshop --details</span>
+      </div>
+      <div class="term-body">
+        <div class="cmt"># when &amp; where</div>
+        <div class="row"><span class="key">date</span><span class="val"><span class="big">Monday, June 29, 2026</span></span></div>
+        <div class="row"><span class="key">time</span><span class="val"><span class="big">11:00 AM – 1:00 PM</span></span></div>
+        <div class="row"><span class="key">place</span><span class="val"><span class="big">655 Rhodes Hall</span></span></div>
+        <div class="row"><span class="key">lunch</span><span class="val">provided — come hungry</span></div>
+        <div class="prompt">
+          <span class="sym">➜</span> see you there<span class="cursor"></span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule">
+
+    <div class="section-label">// what you'll learn</div>
+    <div class="learn">
+      <div class="item"><span class="n">01</span><span class="t"><b>Automate the admin.</b> Skills, routines &amp; sub-agents for the work you'd rather not do.</span></div>
+      <div class="item"><span class="n">02</span><span class="t"><b>Pressure-test research.</b> Red-team your own paper before a reviewer does.</span></div>
+      <div class="item"><span class="n">03</span><span class="t"><b>Code faster.</b> AI-assisted coding you actually verify line by line.</span></div>
+      <div class="item"><span class="n">04</span><span class="t"><b>Visualize anything.</b> Make HTML dashboards &amp; flyers like this one — with no code!</span></div>
+    </div>
+
+    <div class="bring">
+      <span class="tag">Before you<br>arrive</span>
+      <span class="txt">
+        Please <b>install Claude Desktop</b> on your laptop ahead of time —
+        <a href="https://github.com/timothyfraser/systems-ai-workshop/blob/main/00_setup/README.md">5-minute setup guide ↗</a>.
+        You're not committing to it long-term, but many of our students already work this
+        way, and it's worth getting familiar with the system together.
+      </span>
+    </div>
+
+    <div class="foot">
+      <span class="repo"><span class="arrow">↳</span>github.com/timothyfraser/systems-ai-workshop</span>
+      <span class="host">Hosted by Prof. Tim Fraser</span>
+    </div>
+
+  </div>
+</body>
+</html>
