@@ -68,6 +68,19 @@ style: |
   section.title .hero .who { font-size: .72em; margin: .2em 0; }
   section.title .hero .tagline { font-size: .8em; margin: .4em 0 0; color: #ffe3e3; }
   .robot { width: 100%; max-width: 380px; height: auto; filter: drop-shadow(0 14px 26px rgba(0,0,0,.4)); }
+  /* plugin section: bigger readable demos + linked cards */
+  .cols.demo { font-size: 18px; }
+  .cols.demo .col:first-child { flex: 0.95; }
+  .cols.demo .col:last-child { flex: 1.18; }
+  .cols pre.big { font-size: 16px; line-height: 1.5; padding: 12px 15px; }
+  .ask { font-weight: 700; color: var(--carnelian-dark); font-size: 17px; margin: 2px 0 5px; }
+  .got { font-weight: 700; color: var(--carnelian-dark); font-size: 17px; margin: 14px 0 5px; }
+  .pcards { display: flex; flex-direction: column; gap: 11px; margin-top: 6px; }
+  .pcard { background: #fff; border: 1px solid var(--line); border-left: 6px solid var(--carnelian); border-radius: 10px; padding: 11px 15px; }
+  .pcard .pt { font-weight: 700; color: var(--carnelian); font-size: 21px; }
+  .pcard .pd { font-size: 15px; color: var(--ink); margin: 3px 0 5px; line-height: 1.3; }
+  .pcard a { font-weight: 700; font-size: 14px; }
+  a.btn { display: inline-block; background: var(--carnelian); color: #fff !important; padding: 7px 18px; border-radius: 8px; font-size: 15px; font-weight: 700; text-decoration: none; margin-top: 8px; }
 ---
 
 <!-- _class: title -->
@@ -404,3 +417,149 @@ requirements + acceptance, traceability.</pre>
 
 **Repo:** github.com/timothyfraser/systems-ai-workshop 🐙
 Thank you! 🙏🤖
+
+---
+
+<!-- _class: section -->
+
+# 🔌 Bonus — Plugins
+### Skills make Claude *capable*. Plugins make it *connected*. 🔗
+<span class="small" style="color:#ffe3e3">Built for SysEng faculty & staff · runs on Cornell infrastructure 🔒</span>
+
+---
+
+# 🔌 A Skill *does* a job — a Plugin *connects* to your systems
+
+<div class="cols">
+<div class="col">
+<p>🔗 A <b>Skill</b> teaches Claude a task. A <b>plugin</b> gives Claude <i>live, governed</i> access to a real system you already use.</p>
+<p>🏛️ They run in <b>Claude Cowork</b> on <b>Cornell infrastructure</b> — your data and every model call stay in-house (Cornell's AI Gateway via LiteLLM).</p>
+<p><b>🛡️ Read-only by default. Nothing sends without you.</b></p>
+<p class="small">Who's eligible & how to get set up → the last slide. (Hint: ask Sheri! 🙂)</p>
+</div>
+<div class="col">
+<p class="peek-label">three ready today</p>
+<div class="pcards">
+<div class="pcard"><div class="pt">📊 Smartsheet</div><div class="pd">Ask your spreadsheets questions in plain English — read-only.</div><a href="https://github.com/timothyfraser/claude-cowork-plugins" target="_blank">open in GitHub ↗</a></div>
+<div class="pcard"><div class="pt">📧 Outlook</div><div class="pd">Read, search & draft your program email — you hit send.</div><a href="https://github.com/timothyfraser/claude-cowork-plugins" target="_blank">open in GitHub ↗</a></div>
+<div class="pcard"><div class="pt">🎓 Program Assistant</div><div class="pd">Grounded, cited answers about courses, faculty & forms.</div><a href="https://github.com/timothyfraser/claude-cowork-plugins" target="_blank">open in GitHub ↗</a></div>
+</div>
+</div>
+</div>
+
+---
+
+# 📊 Smartsheet *(read-only)*
+
+<a class="tag" href="https://github.com/timothyfraser/claude-cowork-plugins" target="_blank">smartsheet-query ↗</a>
+
+<div class="cols demo">
+<div class="col">
+<p><b>Ask your Smartsheet sheets questions in plain English.</b> No exporting, no hunting through tabs. 🗂️</p>
+<p>🎯 One shared, governed, <b>read-only</b> connection — nothing to install on your computer.</p>
+<p>💬 Which lookup would you love to stop doing by hand?</p>
+</div>
+<div class="col">
+<p class="ask">🗣️ You ask:</p>
+<pre class="big">List my Smartsheet sheets.</pre>
+<p class="got">✅ Claude answers <span class="small">— real result</span></p>
+<pre class="big">6 sheets:
+ • M.Eng Project Proposal FA2024
+ • SP25 HR Grader Applicant Course
+   Selections
+ • Tim's MCP Sandbox
+ • Data – Sandbox (TEST INFO)
+   …and 2 more</pre>
+</div>
+</div>
+
+---
+
+# 📧 Outlook — Email *and* Calendar
+
+<a class="tag" href="https://github.com/timothyfraser/claude-cowork-plugins" target="_blank">outlook-connector ↗</a>
+
+<div class="cols demo">
+<div class="col">
+<p><b>Your program email <i>and</i> calendar, right inside Claude.</b> 📬📆</p>
+<p>📬 Read, search & <b>draft</b> replies — you review and hit send.</p>
+<p>📆 See your week, <b>find a free hour</b>, check availability, or add an event.</p>
+<p>💬 Where would a ready first draft — or an instant "when am I free?" — save you time?</p>
+</div>
+<div class="col">
+<p class="ask">🗣️ You ask:</p>
+<pre class="big">Any unread program emails? Draft a
+reply to the newest one — then tell me
+what's on my calendar this Thursday.</pre>
+<p class="got">✅ Claude answers <span class="small">— example</span></p>
+<pre class="big">📬 3 unread look program-related —
+   reply drafted & saved to your Drafts.
+
+📆 Thursday: 3 meetings; you're free
+   2–3pm if you need to slot a student.</pre>
+</div>
+</div>
+
+---
+
+# 🎓 Program Assistant
+
+<a class="tag" href="https://github.com/timothyfraser/claude-cowork-plugins" target="_blank">program-assistant ↗</a>
+
+<div class="cols demo">
+<div class="col">
+<p><b>Grounded, cited answers about the program</b> — courses, faculty, forms, deadlines, who-to-contact. 📚</p>
+<p>🎯 It <b>shows its sources</b>, and <b>says "I'm not sure"</b> when the answer isn't in the handbook — it won't make things up.</p>
+<p>💬 What do students ask you ten times every semester?</p>
+</div>
+<div class="col">
+<p class="ask">🗣️ You ask:</p>
+<pre class="big">What classes are offered in Fall 2026?</pre>
+<p class="got">✅ Claude answers <span class="small">— real result</span></p>
+<pre class="big">Fall 2026 SYSEN courses:
+ • SYSEN 5100 Model-Based Sys Eng
+ • SYSEN 5900 Sys Eng Design Project
+ • SYSEN 6000 Foundations of Complex
+   Systems          …plus 3 more
+
+ Source: SYSEN Class Roster — FA26 ✅</pre>
+</div>
+</div>
+
+---
+
+# 🔧 Setup is a short conversation — *no code*
+
+<div class="cols demo">
+<div class="col">
+<p><b>You never touch a config file.</b> In Cowork you switch a plugin on, paste one key, and you're connected — usually about two minutes. ⏱️</p>
+<p>🔑 The one thing <i>you</i> provide is an access key Tim gives you. You paste it once; it's stored safely and never shown again.</p>
+<p>💬 Which of the three would you turn on first?</p>
+</div>
+<div class="col">
+<p class="got">📊 Smartsheet · 🎓 Program Assistant</p>
+<pre class="big">1. Switch the plugin on in Cowork
+2. Paste the access key from Tim
+3. Ask "who am I?" → it replies ✅</pre>
+<p class="got">📧 Outlook</p>
+<pre class="big">1. Switch the connector on
+2. Sign in with your NetID + Duo
+   (the normal Cornell login)
+   ✅ done</pre>
+</div>
+</div>
+
+---
+
+<!-- _class: section -->
+
+# 🪪 Want the plugins? Here's the path
+
+<div style="font-size: 27px; line-height: 1.8; margin-top: 8px;">
+<p><strong>1.</strong> ✅ Ask <strong>Sheri</strong> if you're eligible</p>
+<p><strong>2.</strong> 🔑 Get a <strong>LiteLLM API key</strong> from <strong>Tim</strong></p>
+<p><strong>3.</strong> 🎫 Have <strong>CIT</strong> install <strong>Claude Cowork 3P</strong> for you</p>
+<p><strong>4.</strong> 🔌 <strong>Tim sets up the plugins</strong> for you — or do it yourself in ~2 min</p>
+</div>
+
+<span class="small" style="color:#ffe3e3">More joining soon: Google Sheets · PeopleSoft · an inbox auto-drafter 🚀</span>
