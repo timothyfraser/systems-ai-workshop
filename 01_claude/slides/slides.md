@@ -488,15 +488,16 @@ Thank you! 🙏🤖
 </div>
 <div class="col">
 <p class="ask">🗣️ You ask:</p>
-<pre class="big">Any unread program emails? Draft a
-reply to the newest one — then tell me
-what's on my calendar this Thursday.</pre>
-<p class="got">✅ Claude answers <span class="small">— example</span></p>
-<pre class="big">📬 3 unread look program-related —
-   reply drafted & saved to your Drafts.
+<pre class="big">What's on my calendar this week, and
+when am I free to meet a student?</pre>
+<p class="got">✅ Claude answers <span class="small">— real result, names removed</span></p>
+<pre class="big">📆 This week: 5 office-hour slots, your
+   Gao Labs weekly, an MEng project sync,
+   and a SYSEN 5940 dinner — you're open
+   most afternoons after ~3:30.
 
-📆 Thursday: 3 meetings; you're free
-   2–3pm if you need to slot a student.</pre>
+📬 Email works the same way: it reads your
+   inbox and saves a draft reply to Drafts.</pre>
 </div>
 </div>
 
